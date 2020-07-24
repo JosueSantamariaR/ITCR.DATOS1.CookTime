@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CookTime.Views.Navigation"
+             x:Class="CookTime.Views.Navigation.BottomNavigationPage"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:local1="clr-namespace:CookTime.Views.Notification" xmlns:local2="clr-namespace:CookTime.Views.Forms" xmlns:local11="clr-namespace:CookTime.Views.Catalog" xmlns:local3="clr-namespace:CookTime.Views.Settings" xmlns:local4="clr-namespace:CookTime.Views.Social"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.BarSelectedItemColor="{DynamicResource PrimaryColor}"
+             android:TabbedPage.BarItemColor="{DynamicResource Gray-600}"
+             BarBackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+
+
+    <local11:NewsFeedPage  Title="Home">
+        <local11:NewsFeedPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                                 Glyph="{StaticResource Rating}"
+                                 Size="16"/>
+        </local11:NewsFeedPage.IconImageSource>
+    </local11:NewsFeedPage>
+
+
+    <local2:BusinessRegistrationFormPage Title="Recipe">
+        <local2:BusinessRegistrationFormPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                                 Glyph="{StaticResource Add}"
+                                 Size="16"/>
+        </local2:BusinessRegistrationFormPage.IconImageSource>
+    </local2:BusinessRegistrationFormPage>
+
+
+    <local2:AddContactPage Title="Search">
+        <local2:AddContactPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                                 Glyph="{StaticResource Search}"
+                                 Size="16"/>
+        </local2:AddContactPage.IconImageSource>
+    </local2:AddContactPage>
+
+    <local4:SocialProfileWithMessagePage Title="Profile">
+        <local4:SocialProfileWithMessagePage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                                 Glyph="{StaticResource Account}"
+                                 Size="16"/>
+        </local4:SocialProfileWithMessagePage.IconImageSource>
+    </local4:SocialProfileWithMessagePage>
+
+</TabbedPage>

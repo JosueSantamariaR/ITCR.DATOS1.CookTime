@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CookTime.Views.Forms.AddProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:CookTime.Controls"
+    xmlns:behaviours="clr-namespace:CookTime.Behaviors"
+    xmlns:converter="clr-namespace:CookTime.Converters"
+    xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+    Title="New Contact"
+    BackgroundColor="{DynamicResource Gray-White}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="16" Spacing="16">
+
+
+                <!-- Enterprise Name Label -->
+                <Label 
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    Margin="0,0,0,4"
+                    HeightRequest="18" 
+                    FontSize="12"
+                    Text="Enterprise Name"
+                    TextColor="{DynamicResource Gray-800}" />
+
+                <!--  Enterprise Name Entry -->
+                <border:SfBorder BorderColor="{Binding Source={x:Reference EnterpriseName}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" Style="{StaticResource FormBorderStyle}">
+                    <control:BorderlessEntry
+                        x:Name="EnterpriseName"
+                        Placeholder="Name"
+                        Style="{StaticResource EntryTextStyle}" />
+                </border:SfBorder>
+                <!-- Address Label -->
+                <Label
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    Margin="0,0,0,4"
+                    HeightRequest="18" 
+                    FontSize="12"
+                    Text="Enterprise Address"
+                    TextColor="{DynamicResource Gray-800}" />
+
+                <!--  Address Entry  -->
+                <border:SfBorder
+                    Grid.Column="2"
+                    BorderColor="{Binding Source={x:Reference Address}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                    Style="{StaticResource FormBorderStyle}">
+                    <control:BorderlessEntry
+                        x:Name="Address"
+                        Placeholder="Address"
+                        Style="{StaticResource EntryTextStyle}" />
+                </border:SfBorder>
+
+                <!--  Telephone number label-->
+                <Label
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    Margin="0,0,0,4"
+                    HeightRequest="18" 
+                    FontSize="12"
+                    Text="Contact Method"
+                    TextColor="{DynamicResource Gray-800}" />
+
+                <!--  Telephone number entry-->
+                <border:SfBorder
+                    Grid.Column="2"
+                    BorderColor="{Binding Source={x:Reference ContactMethod}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                    Style="{StaticResource FormBorderStyle}">
+                    <control:BorderlessEntry
+                        x:Name="ContactMethod"
+                        Placeholder="Contact email :"
+                        Style="{StaticResource EntryTextStyle}" >
+
+                    </control:BorderlessEntry>
+                </border:SfBorder>
+
+                <!-- Schedule Label -->
+                <Label
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    Margin="0,0,0,4"
+                    HeightRequest="18" 
+                    FontSize="12"
+                    Text="Schedule"
+                    TextColor="{DynamicResource Gray-800}" />
+
+                <!-- Schedule Entry  -->
+                <border:SfBorder
+                    Grid.Column="2"
+                    BorderColor="{Binding Source={x:Reference Schedule}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                    Style="{StaticResource FormBorderStyle}">
+                    <control:BorderlessEntry
+                        x:Name="Schedule"
+                        Placeholder="Schedule"
+                        Style="{StaticResource EntryTextStyle}" />
+                </border:SfBorder>
+
+                <!--  Add enterprise button-->
+                <buttons:SfButton
+                    x:Name="AddEnterprise"
+                    Margin="0,16,0,0"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource SfButtonStyle}"
+                    Text="ADD ENTERPRISE"
+                    Clicked="AddEnterprise_Clicked"
+                    WidthRequest="200" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

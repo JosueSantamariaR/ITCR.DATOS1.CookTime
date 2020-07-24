@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CookTime.Views.Settings.SettingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:controls="clr-namespace:CookTime.Controls"
+    xmlns:effectView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Settings"
+    x:Name="settingPage"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary Source="Styles.xaml" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0">
+                <!--  Title View  -->
+                <controls:TitleView Title="Settings" BackgroundColor="{DynamicResource Gray-White} ">
+                    <controls:TitleView.LeadingView>
+                        <buttons:SfButton
+                            x:Name="backButton"
+                            Clicked="backButton_Clicked"
+                            Command="{TemplateBinding BindingContext.BackButtonCommand}"
+                            CommandParameter="{x:Reference backButton}"
+                            CornerRadius="4"
+                            Style="{StaticResource IconButtonStyle}"
+                            Text="{StaticResource Back}" />
+                    </controls:TitleView.LeadingView>
+                </controls:TitleView>
+                <ContentPresenter />
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.BindingContext>
+        <viewModel:SettingViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{DynamicResource Gray-100}" Spacing="0">
+
+                <!--  Add new Enterprise  -->
+                <buttons:SfButton
+                    x:Name="AddNewEnterprise"
+                    Margin="0,10,0,10"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    FontFamily="{StaticResource Montserrat-SemiBold}"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Style="{StaticResource RoundButtonStyleSettings}"
+                    Text="Add Enterprise"
+                    TextColor="Black"
+                    WidthRequest="245" 
+                    Clicked="AddNewEnterprise_Clicked"  />
+                
+                <!--  Change Password button  -->
+                <buttons:SfButton
+                    x:Name="ResetPasswordButton"
+                    Margin="0,10,0,10"
+                    BorderColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    BorderWidth="1"
+                    FontFamily="{StaticResource Montserrat-SemiBold}"
+                    HeightRequest="40"
+                    Style="{StaticResource RoundButtonStyleSettings}"
+                    Text="Change Password"
+                    Clicked="ResetPasswordButton_Clicked"
+                    TextColor="Black"
+                    WidthRequest="245" />
+              
+
+                <!--  Logout button  -->
+                <buttons:SfButton
+                    x:Name="LogOutSettingsButton"
+                    Margin="0,24,0,32"
+                    BackgroundColor="{DynamicResource PrimaryColor}"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    FontFamily="{StaticResource Montserrat-SemiBold}"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource RoundButtonStyle}"
+                    Text="LOG OUT"
+                    TextColor="Black"
+                    WidthRequest="245" 
+                    Clicked="LogOutSettingsButton_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

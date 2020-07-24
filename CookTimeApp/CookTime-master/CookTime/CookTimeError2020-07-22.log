@@ -1,0 +1,159 @@
+
+
+Date:2020-07-22 23:41:56,517
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: El argumento no puede ser nulo ni estar vacío
+Nombre del parámetro: fullName
+   en NuGet.VisualStudio.ProjectNames..ctor(String fullName, String uniqueName, String shortName, String customUniqueName)
+   en NuGet.VisualStudio.ProjectNames.<FromDTEProjectAsync>d__17.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.PackageManagement.VisualStudio.VsProjectAdapterProvider.<CreateAdapterForFullyLoadedProjectAsync>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.PackageManagement.VisualStudio.VSSolutionManager.<GetOrCreateProjectAsync>d__108.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.VisualStudio.VsPackageInstallerServices.<GetInstalledPackageReferencesAsync>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.VisualStudio.VsPackageInstallerServices.<>c__DisplayClass13_0.<<IsPackageInstalled>b__0>d.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Microsoft.VisualStudio.Threading.JoinableTask.CompleteOnCurrentThread()
+   en Microsoft.VisualStudio.Threading.JoinableTask`1.CompleteOnCurrentThread()
+   en Microsoft.VisualStudio.Threading.JoinableTaskFactory.Run[T](Func`1 asyncMethod, JoinableTaskCreationOptions creationOptions)
+   en NuGet.VisualStudio.VsPackageInstallerServices.IsPackageInstalled(Project project, String packageId, NuGetVersion nugetVersion)
+   en NuGet.VisualStudio.VsPackageInstallerServices.IsPackageInstalled(Project project, String packageId)
+   en Syncfusion.Xamarin.UI.WizardImplementation.NugetPackageInstallation(Project project, String package, String version)
+
+
+Date:2020-07-22 23:41:56,561
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: El argumento no puede ser nulo ni estar vacío
+Nombre del parámetro: fullName
+   en NuGet.VisualStudio.ProjectNames..ctor(String fullName, String uniqueName, String shortName, String customUniqueName)
+   en NuGet.VisualStudio.ProjectNames.<FromDTEProjectAsync>d__17.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.PackageManagement.VisualStudio.VsProjectAdapterProvider.<CreateAdapterForFullyLoadedProjectAsync>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.PackageManagement.VisualStudio.VSSolutionManager.<GetOrCreateProjectAsync>d__108.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.VisualStudio.VsPackageInstallerServices.<GetInstalledPackageReferencesAsync>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.VisualStudio.VsPackageInstallerServices.<>c__DisplayClass13_0.<<IsPackageInstalled>b__0>d.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Microsoft.VisualStudio.Threading.JoinableTask.CompleteOnCurrentThread()
+   en Microsoft.VisualStudio.Threading.JoinableTask`1.CompleteOnCurrentThread()
+   en Microsoft.VisualStudio.Threading.JoinableTaskFactory.Run[T](Func`1 asyncMethod, JoinableTaskCreationOptions creationOptions)
+   en NuGet.VisualStudio.VsPackageInstallerServices.IsPackageInstalled(Project project, String packageId, NuGetVersion nugetVersion)
+   en NuGet.VisualStudio.VsPackageInstallerServices.IsPackageInstalled(Project project, String packageId)
+   en Syncfusion.Xamarin.UI.WizardImplementation.NugetPackageInstallation(Project project, String package, String version)
+
+
+Date:2020-07-22 23:41:56,567
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: El argumento no puede ser nulo ni estar vacío
+Nombre del parámetro: fullName
+   en NuGet.VisualStudio.ProjectNames..ctor(String fullName, String uniqueName, String shortName, String customUniqueName)
+   en NuGet.VisualStudio.ProjectNames.<FromDTEProjectAsync>d__17.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.PackageManagement.VisualStudio.VsProjectAdapterProvider.<CreateAdapterForFullyLoadedProjectAsync>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.PackageManagement.VisualStudio.VSSolutionManager.<GetOrCreateProjectAsync>d__108.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.VisualStudio.VsPackageInstallerServices.<GetInstalledPackageReferencesAsync>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NuGet.VisualStudio.VsPackageInstallerServices.<>c__DisplayClass13_0.<<IsPackageInstalled>b__0>d.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Microsoft.VisualStudio.Threading.JoinableTask.CompleteOnCurrentThread()
+   en Microsoft.VisualStudio.Threading.JoinableTask`1.CompleteOnCurrentThread()
+   en Microsoft.VisualStudio.Threading.JoinableTaskFactory.Run[T](Func`1 asyncMethod, JoinableTaskCreationOptions creationOptions)
+   en NuGet.VisualStudio.VsPackageInstallerServices.IsPackageInstalled(Project project, String packageId, NuGetVersion nugetVersion)
+   en NuGet.VisualStudio.VsPackageInstallerServices.IsPackageInstalled(Project project, String packageId)
+   en Syncfusion.Xamarin.UI.WizardImplementation.NugetPackageInstallation(Project project, String package, String version)
+
+
+Date:2020-07-22 23:41:56,575
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: No se puede dejar vacío el nombre de la ruta de acceso.
+   en System.IO.File.ReadAllText(String path)
+   en Syncfusion.Xamarin.UI.WizardImplementation.AddControlRendererLine(List`1 templateList, List`1 resourceList)
+
+
+Date:2020-07-22 23:41:56,588
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: No se puede dejar vacío el nombre de la ruta de acceso.
+   en System.IO.File.ReadAllText(String path)
+   en Syncfusion.Xamarin.UI.WizardImplementation.AddFlies(String[] fileName, String projectType)
+
+
+Date:2020-07-22 23:41:56,593
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: No se puede dejar vacío el nombre de la ruta de acceso.
+   en System.IO.File.ReadAllText(String path)
+   en Syncfusion.Xamarin.UI.WizardImplementation.AddProjectItemsForIOS(String ProjectFile, String[] fileName)
+
+
+Date:2020-07-22 23:41:56,597
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: No se puede dejar vacío el nombre de la ruta de acceso.
+   en System.IO.File.ReadAllText(String path)
+   en Syncfusion.Xamarin.UI.WizardImplementation.AddFlies(String[] fileName, String projectType)
+
+
+Date:2020-07-22 23:41:56,602
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: No se puede dejar vacío el nombre de la ruta de acceso.
+   en System.IO.File.ReadAllText(String path)
+   en Syncfusion.Xamarin.UI.WizardImplementation.AddProjectItemsForUWP(String ProjectFile, String[] fileName)
+
+
+Date:2020-07-22 23:41:56,613
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.ArgumentException: No se puede dejar vacío el nombre de la ruta de acceso.
+   en System.IO.File.ReadAllText(String path)
+   en Syncfusion.Xamarin.UI.WizardImplementation.AddFlies(String[] fileName, String projectType)

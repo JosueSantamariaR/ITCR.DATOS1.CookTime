@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CookTime.Views.Forms.BusinessRegistrationFormPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:controls="clr-namespace:CookTime.Controls"
+    xmlns:converter="clr-namespace:CookTime.Converters"
+    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Forms"
+    xmlns:behaviours="clr-namespace:CookTime.Behaviors" xmlns:x1="clr-namespace:System.Drawing;assembly=netstandard"
+    xmlns:richtexteditor="clr-namespace:Syncfusion.XForms.RichTextEditor;assembly=Syncfusion.SfRichTextEditor.XForms" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    Title="Business Registration Form"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModel:RecipeFormViewModel />
+    </ContentPage.BindingContext>
+
+    <d:ContentPage.BindingContext>
+        <viewModel:RichTextViewModel />
+    </d:ContentPage.BindingContext>
+
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-White}">
+                
+                <!-- Title -->
+                <Label 
+                    Text="New Recipe Form"
+                    TextColor="{DynamicResource Gray-900}"
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    FontSize="16"
+                    Margin="0,20"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <BoxView HeightRequest="1" BackgroundColor="{DynamicResource Gray-200}"/>
+                <ContentPresenter />
+                
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{DynamicResource Gray-100}" Spacing="0" Padding="16,24">
+                
+                <!-- Recipe Name -->
+                <Label 
+             
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,0,0,4"
+                        HeightRequest="18" 
+                        FontSize="12"
+                        Text="  Recipe Name"
+                        TextColor="{DynamicResource Gray-800}" />
+                
+                <border:SfBorder BorderColor="{Binding Source={x:Reference RecipeName}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="RecipeName"
+                            Placeholder="Name"
+                            Text="{Binding RecipeName}"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>
+
+                <!-- Author Name -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18" 
+                        FontSize="12"
+                        Text="Recipe Author"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference RecipeAuthor}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="RecipeAuthor"
+                            Placeholder="Author Name"
+                            Text="{Binding RecipeAuthor}"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>
+
+
+                <!-- Recipe creation -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18" 
+                        FontSize="12"
+                        Text="Recipe Creation"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder
+                        Grid.Row="1"
+                        Padding="12,0,0,0"
+                        Style="{StaticResource FormBorderStyle}">
+
+                    <controls:CalenderDatePicker 
+                            x:Name="CustomDatePicker"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            FontSize="16"
+                            Format="dd/MM/yy"
+                            PlaceHolderText="DD/MM/YY"
+                            TextColor="{DynamicResource Gray-600}" />
+
+                </border:SfBorder>
+
+                <!-- Dish type -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Dish type"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor ="{Binding Source={x:Reference DishType}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                        <combobox:SfComboBox
+                                x:Name="DishType"
+                                SelectedValue="{Binding DishType, Mode=TwoWay}"
+                                Style="{StaticResource ComboBoxStyle}"
+                                Watermark="Choose type"
+                                VerticalOptions="CenterAndExpand"
+                                Text="{Binding DishType}"                                    >
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>Breakfast</x:String>
+                                <x:String>Lunch</x:String>
+                                <x:String>Snack</x:String>
+                                <x:String>Dinner</x:String>
+                                <x:String>Brunch</x:String>
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                                    <combobox:DropDownButtonSettings>
+                                        <combobox:DropDownButtonSettings.View>
+                                            <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                                    </combobox:DropDownButtonSettings>
+                                </combobox:SfComboBox.DropDownButtonSettings>
+                        </combobox:SfComboBox>
+                </border:SfBorder>
+
+                <!-- servings -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Servings"
+                        
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference Servings}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="Servings"
+                            Placeholder="Number of people"
+                            Text="{Binding Servings}"
+                            Keyboard="Numeric"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>
+
+
+                <!-- Food type -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Food type"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor ="{Binding Source={x:Reference FoodType}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                    <combobox:SfComboBox
+                                x:Name="FoodType"
+                                SelectedValue="{Binding FoodType, Mode=TwoWay}"
+                                Style="{StaticResource ComboBoxStyle}"
+                                Watermark="Choose type"
+                                Text="{Binding FoodType}"
+                                VerticalOptions="CenterAndExpand">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>Snacks</x:String>
+                                <x:String>Starter</x:String>
+                                <x:String>Main Dish</x:String>
+                                <x:String>Alcoholic Beverages</x:String>
+                                <x:String>Cold Drinks</x:String>
+                                <x:String>HotDrinks</x:String>
+                                <x:String>Dessert Drinks</x:String>
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                            <combobox:DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings.View>
+                                    <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                            </combobox:DropDownButtonSettings>
+                        </combobox:SfComboBox.DropDownButtonSettings>
+                    </combobox:SfComboBox>
+                </border:SfBorder>
+
+
+                <!-- Difficulty factor: -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Difficulty factor"
+                        TextColor="{DynamicResource Gray-800}" />
+
+
+                <border:SfBorder BorderColor ="{Binding Source={x:Reference DifficultyFactor}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                    <combobox:SfComboBox
+                                x:Name="DifficultyFactor"
+                                SelectedValue="{Binding DifficultyFactor, Mode=TwoWay}"
+                                Style="{StaticResource ComboBoxStyle}"
+                                Watermark="Choose type"
+                                Text="{Binding DifficultyFactor}"
+                                VerticalOptions="CenterAndExpand">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                            <combobox:DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings.View>
+                                    <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                            </combobox:DropDownButtonSettings>
+                        </combobox:SfComboBox.DropDownButtonSettings>
+                    </combobox:SfComboBox>
+                </border:SfBorder>
+
+
+                <!-- Recipe preparation time -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Preparation Time"
+                        TextColor="{DynamicResource Gray-800}" />
+
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference PreparationTime}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3} "  
+                        
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                    <combobox:SfComboBox
+                                x:Name="PreparationTime"
+                                SelectedValue="{Binding PreparationTime, Mode=TwoWay}"
+                                Style="{StaticResource ComboBoxStyle}"
+                                Watermark="Choose type"
+                                Text="{Binding PreparationTime}"
+                                VerticalOptions="CenterAndExpand">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>1 </x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>5</x:String>
+                                <x:String>10</x:String>
+                                <x:String>24</x:String>
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                            <combobox:DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings.View>
+                                    <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                            </combobox:DropDownButtonSettings>
+                        </combobox:SfComboBox.DropDownButtonSettings>
+                    </combobox:SfComboBox>
+                </border:SfBorder>
+
+
+
+
+               
+
+
+
+                <!-- Ingredientes -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Recipe ingredients"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <richtexteditor:SfRichTextEditor x:Name="RecipeIngredients" Text="{Binding RecipeIngredients}" VerticalOptions="FillAndExpand" PlaceHolder= "In this section you must add all the important ingredients for the preparation of the recipe." />
+                <!-- Recipe Tags -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Recipe Tags"
+                        TextColor="{DynamicResource Gray-800}" />
+
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference RecipeTags }, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                        
+                        Style="{StaticResource BusinessFormBorderStyle}">
+                    <combobox:SfComboBox
+                                x:Name="RecipeTags" MultiSelectMode="Delimiter"  Delimiter=","
+                                SelectedValue="{Binding RecipeTags, Mode=TwoWay}"
+                                Style="{StaticResource ComboBoxStyle}"
+                                Watermark="Choose type"
+                                Text="{Binding RecipeTags}"
+                                VerticalOptions="CenterAndExpand">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>Vegetarian</x:String>
+                                <x:String>Vegan</x:String>
+                                <x:String>Keto</x:String>
+                                <x:String>Kosher</x:String>
+                                <x:String>Celiac</x:String>
+                                <x:String>Carnivorous</x:String>
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                        <combobox:SfComboBox.DropDownButtonSettings>
+                            <combobox:DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings.View>
+                                    <Label
+                                                    FontFamily="{StaticResource FontIcons}"
+                                                    FontSize="25"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{StaticResource DropDownButtonIcon}"
+                                                    TextColor="{DynamicResource Gray-600}"
+                                                    VerticalTextAlignment="Center" />
+                                </combobox:DropDownButtonSettings.View>
+                            </combobox:DropDownButtonSettings>
+                        </combobox:SfComboBox.DropDownButtonSettings>
+                    </combobox:SfComboBox>
+                </border:SfBorder>
+
+                <!-- Preparation Steps -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Preparation Steps"
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <richtexteditor:SfRichTextEditor x:Name="PreparationSteps" Text="{Binding PreparationSteps}" VerticalOptions="FillAndExpand" PlaceHolder="In this section you must add all the steps necessary to carry out the recipe in a simple and satisfactory way." />
+
+
+
+                <!-- Price : -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Price $ "
+                        TextColor="{DynamicResource Gray-800}" />
+
+                <border:SfBorder BorderColor="{Binding Source={x:Reference Price}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" 
+                                 Style="{StaticResource BusinessFormBorderStyle}">
+                    <controls:BorderlessEntry
+                            x:Name="Price"
+                            Placeholder="$0.00"
+                            Text="{Binding Price}"
+                            Keyboard="Numeric"
+                            Style="{StaticResource EntryTextBoxStyle}" />
+                </border:SfBorder>
+
+                <!-- Image Recipe -->
+                <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        Margin="0,24,0,4"
+                        HeightRequest="18"
+                        FontSize="12"
+                        Text="Recipe Image"
+                        TextColor="{DynamicResource Gray-800}" />
+                
+                <richtexteditor:SfRichTextEditor x:Name="rte" Text="{Binding RecipeImage}" VerticalOptions="FillAndExpand" ImageInsertCommand="{Binding ImageInsertCommand}"/>
+
+              
+
+                <!-- Submit Button -->
+                <buttons:SfButton
+                        x:Name="SubmitButton"
+                        Command="{Binding SubmitCommand}"
+                        HorizontalOptions="Center"
+                        Margin="0,24,0,0"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="SUBMIT"
+                        WidthRequest="200" 
+                        Clicked="SubmitButton_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

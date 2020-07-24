@@ -1,0 +1,43 @@
+
+
+Date:2020-06-26 17:17:39,415
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.WizardImplementation                         [(null)]
+Message:System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> Microsoft.VisualStudio.ProjectSystem.ProjectException: Could not find project item with item type 'None' and include value 'App.xaml'.
+   at Microsoft.VisualStudio.ProjectSystem.ProjectErrorUtilities.ThrowProjectExceptionHelper(Exception innerException, String unformattedMessage, Object[] args)
+   at Microsoft.VisualStudio.ProjectSystem.ProjectErrorUtilities.ThrowProjectException(String message, Object arg0, Object arg1)
+   at Microsoft.VisualStudio.ProjectSystem.ProjectInstanceItemProperties.get_Item()
+   at Microsoft.VisualStudio.ProjectSystem.ProjectInstanceItemProperties.GetEvaluatedPropertyValueAsync(String propertyName)
+   at Microsoft.VisualStudio.ProjectSystem.PropertyPages.PageProperty.GetEvaluatedValueAtEndAsync()
+   at Microsoft.VisualStudio.ProjectSystem.PropertyPages.PageProperty.<GetValueAsync>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.ProjectSystem.PropertyPages.PageStringProperty.<GetValueAsStringAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.ProjectSystem.PropertyPages.PageStringProperty.<GetValueAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.ProjectSystem.VS.Implementation.PropertyPages.DynamicTypeBrowseObject.<<VSLangProj-FileProperties-get_FullPath>b__34_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Threading.JoinableTask.CompleteOnCurrentThread()
+   at Microsoft.VisualStudio.Threading.JoinableTask`1.CompleteOnCurrentThread()
+   at Microsoft.VisualStudio.Threading.JoinableTaskFactory.Run[T](Func`1 asyncMethod, JoinableTaskCreationOptions creationOptions)
+   at Microsoft.VisualStudio.Threading.JoinableTaskFactory.Run[T](Func`1 asyncMethod)
+   at Microsoft.VisualStudio.ProjectSystem.ProjectMultiThreadedService.ExecuteSynchronously[T](Func`1 asyncAction)
+   at Microsoft.VisualStudio.ProjectSystem.VS.Implementation.PropertyPages.DynamicTypeBrowseObject.VSLangProj.FileProperties.get_FullPath()
+   at Microsoft.VisualStudio.ProjectSystem.VS.Implementation.PropertyPages.DynamicTypeBrowseObject.VSLangProj80.FileProperties2.get_FullPath()
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, Object[] index)
+   at Microsoft.VisualStudio.ProjectSystem.VS.Implementation.Package.Automation.OAPropertyInfo.get_Value()
+   at Syncfusion.Xamarin.UI.WizardImplementation.EditAppXamlFile(Project selectedProject)

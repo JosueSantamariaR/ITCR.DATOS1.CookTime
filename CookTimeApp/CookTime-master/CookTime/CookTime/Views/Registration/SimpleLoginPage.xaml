@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CookTime.Views.Forms.SimpleLoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:CookTime.Controls"
+    xmlns:converter="clr-namespace:CookTime.Converters"
+    xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+    xmlns:local="clr-namespace:CookTime.Views.Forms"
+    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Forms"
+    BackgroundColor="{DynamicResource Gray-200}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--  Binding context for login page  -->
+    <ContentPage.BindingContext>
+        <viewModel:LoginPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="Center">
+            <ScrollView.VerticalOptions>
+                <OnIdiom
+                    x:TypeArguments="LayoutOptions"
+                    Default="CenterAndExpand"
+                    Phone="FillAndExpand" />
+            </ScrollView.VerticalOptions>
+
+            <StackLayout
+                Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                                                             PhoneLandscape='150,32',
+                                                             TabletPortrait='200,50',
+                                                             TabletLandscape='300,50',
+                                                             Desktop='30'}"
+                Spacing="0"
+                VerticalOptions="FillAndExpand"
+                WidthRequest="{OnPlatform Default='-1',
+                                          UWP='350'}">
+
+                <Grid RowSpacing="0" VerticalOptions="CenterAndExpand">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+
+                    <!--  Image to display the logo of the aplication -->
+
+                    <Image Source="cookTimeIcon.png" 
+                           Grid.Row="1"/>
+
+
+
+                    <!--  Label to display the title of this page  -->
+                    <Label
+                        Grid.Row="2"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="¡Welcome to Cook Time!"
+                        TextColor="{DynamicResource Gray-900}" />
+
+                    <!--  Label to display the description of this page  -->
+                    <Label
+                        Grid.Row="3"
+                        Margin="0,8"
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Food lovers around the world"
+                        TextColor="{DynamicResource Gray-800}" />
+                    
+                    <!--  Entry to get email ID from user  -->
+                    <border:SfBorder
+                        Grid.Row="4"
+                        Margin="8"
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference EmailEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="EmailEntry"
+                            Placeholder="Email"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding EmailLogin}"
+                            TextColor="{DynamicResource Gray-900}" 
+                            Keyboard="Email"/>
+                    </border:SfBorder>
+
+                    <!--  Entry to get password from user  -->
+                    <border:SfBorder
+                        Grid.Row="5"
+                        Margin="8"
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="PasswordEntry"
+                            IsPassword="True"
+                            Placeholder="Password"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding PasswordLogin}"
+                            TextColor="{DynamicResource Gray-900}" />
+                    </border:SfBorder>
+
+
+                    <!--  Login button  -->
+                    <buttons:SfButton
+                        x:Name ="loginButtonMain"
+                        Clicked="LoginButtonMain_OnClicked"
+                        Grid.Row="7"
+                        Margin="0,16"
+                        Command="{Binding LoginCommand}"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="LOG IN" />
+
+
+                </Grid>
+
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    Spacing="1"
+                    VerticalOptions="End">
+
+
+
+                    <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Don't have an account?"
+                        TextColor="{DynamicResource Gray-900}"
+                        VerticalTextAlignment="Center" />
+
+                    <!--  Sign-up button  -->
+                    <buttons:SfButton
+                        x:Name="signUpButton"
+                        Command="{Binding SignUpCommand}"
+                        CornerRadius="4"
+                        Style="{StaticResource SfFlatButtonStyle}"
+                        Text="Sign Up" 
+                        Clicked="SignUpButton_OnClicked"/>
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

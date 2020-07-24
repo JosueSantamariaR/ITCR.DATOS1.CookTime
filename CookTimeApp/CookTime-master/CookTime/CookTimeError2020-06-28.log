@@ -1,0 +1,80 @@
+
+
+Date:2020-06-28 01:26:50,579
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:26:51,795
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:26:52,612
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:26:53,620
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:26:54,828
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:27:09,322
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:27:39,180
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:29:21,960
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:35:53,146
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)
+
+
+Date:2020-06-28 01:36:30,954
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.Xamarin.UI.MainViewModel                         [(null)]
+Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at Syncfusion.Xamarin.UI.MainWindow.ItemCheckBox_Unchecked(Object sender, RoutedEventArgs e)

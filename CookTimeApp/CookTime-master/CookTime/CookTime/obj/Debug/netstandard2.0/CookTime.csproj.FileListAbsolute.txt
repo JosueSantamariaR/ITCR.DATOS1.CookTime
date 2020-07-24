@@ -1,0 +1,99 @@
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\CookTime.deps.json
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\CookTime.dll
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\ref\CookTime.dll
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\CookTime.pdb
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.csprojAssemblyReference.cache
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Themes\LightTheme.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Notification\SocialNotificationPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Notification\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Settings\SettingPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Settings\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.AssemblyInfoInputs.cache
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.AssemblyInfo.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.dll
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\ref\CookTime.dll
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.pdb
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\CookTime.deps.json
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\CookTime.dll
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\ref\CookTime.dll
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\CookTime.pdb
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Themes\LightTheme.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Bookmarks\BookmarksPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Bookmarks\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\NewsFeedNavigation\BottomNavigationPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\NewsFeedNavigation\NavigationTileCardPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\NewsFeedNavigation\SettingsPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\NewsFeedNavigation\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Notification\SocialNotificationPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Notification\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\ProfilePage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Templates\ProfileTemplate.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\RecipeFormPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleEmailEntry.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleLoginPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleResetPasswordPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleSignUpPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Settings\SettingPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Settings\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\ArticleActivityTemplate.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\NavigationTileTemplate.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.AssemblyInfoInputs.cache
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.AssemblyInfo.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.dll
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\ref\CookTime.dll
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.pdb
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Bookmarks\BookmarksPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Bookmarks\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\NewsFeedNavigation\BottomNavigationPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\NewsFeedNavigation\SettingsPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\NewsFeedNavigation\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\ProfilePage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Templates\ProfileTemplate.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\RecipeFormPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleEmailEntry.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleLoginPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleResetPasswordPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleSignUpPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\ArticleDetailPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\ArticleDetailPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.csproj.CopyComplete
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\AddEnterprisePage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\AddEnterprisePage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.csproj.CoreCompileInputs.cache
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\AddContactPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\AddContactPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.csprojAssemblyReference.cache
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\NewsFeedPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\Styles.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\NewsFeedTemplate.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\EnterpriseSearchPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\RecipeSearchPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\UserSearchPage.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\EnterpriseTemplate.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\RecipeTemplate.xaml.g.cs
+C:\Users\gabos\Desktop\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\UserTemplate.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\EnterpriseSearchPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\NewsFeedPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\RecipeSearchPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\Styles.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\UserSearchPage.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\EnterpriseTemplate.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\NewsFeedTemplate.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\RecipeTemplate.xaml.g.cs
+C:\Users\carlo\Desktop\Cook Time Project Master\Pruebas\CookTime\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\UserTemplate.xaml.g.cs

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CookTime.Views.Catalog.RecipeSearchPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+    xmlns:controls="clr-namespace:CookTime.Controls"
+    xmlns:converter="clr-namespace:CookTime.Converters"
+    xmlns:helper="clr-namespace:CookTime.Helpers"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
+    xmlns:template="clr-namespace:CookTime.Views.Templates"
+    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Catalog"
+    x:Name="articleList"
+    BackgroundColor="{DynamicResource Gray-White}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converter:BooleanToStringConverter x:Key="BoolToStringConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="16" Spacing="16">
+
+                
+
+                <!--  Header label  -->
+                <Label
+                    FontFamily="{StaticResource Montserrat-SemiBold}"
+                    FontSize="16"
+                    LineHeight="{OnPlatform Default=-1,
+                                            Android=1.25}"
+                    Text="Recipes"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="{DynamicResource Gray-800}" />
+
+                <!--  Featured blog list  -->
+                <StackLayout BindableLayout.ItemsSource="{Binding LatestStories}" Spacing="16">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <template:RecipeTemplate ParentBindingContext="{Binding Path=BindingContext, Source={x:Reference articleList}}" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
