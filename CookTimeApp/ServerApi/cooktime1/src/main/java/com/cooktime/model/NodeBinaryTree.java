@@ -1,17 +1,30 @@
 package com.cooktime.model;
 
+/**
+ * Class in charge of creating BinaryTree nodes.
+ */
 public class NodeBinaryTree {
     
     private User user;
     private NodeBinaryTree left;
     private NodeBinaryTree right;
         
+    /**
+     * Constructor of this class.
+     * @param user User user to insert.
+     */
     public NodeBinaryTree(User user) {
         
         this(user, null, null);
         
     }
     
+    /**
+     * Constructor of this class.
+     * @param user User user to insert.
+     * @param left NodeBinaryTree left node.
+     * @param right NodeBinaryTree right node.
+     */
     public NodeBinaryTree(User user, NodeBinaryTree left, NodeBinaryTree right) {
         
         this.user = user;
@@ -54,31 +67,6 @@ public class NodeBinaryTree {
         
         this.right = right;
         
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 61 * hash + (this.user != null ? this.user.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final NodeBinaryTree other = (NodeBinaryTree) obj;
-        if (this.user != other.user && (this.user == null || !this.user.equals(other.user))) {
-            return false;
-        }
-        return true;
     }
 
 }

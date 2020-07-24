@@ -2,19 +2,29 @@ package com.cooktime.model;
 
 import java.util.ArrayList;
 
+/**
+ * Class in charge of creating the Splay Tree.
+ */
 public class SplayTree {
 
     private static SplayTree instance = null;
     private NodeSplayTree root;
-    private ArrayList<Enterprise> recipeList = new ArrayList<Enterprise>();
+    private final ArrayList<Enterprise> enterpriseList = new ArrayList<Enterprise>();
     private int count = 0;
 
+    /**
+     * Constructor of this class.
+     */
     private SplayTree() {
 
         this.root = null;
 
     }
     
+    /**
+     * Method that creates only one instance of this class.
+     * @return SplayTree instance of the tree.
+     */
     public static SplayTree getInstance() {
         
         if (instance == null) {
@@ -27,18 +37,32 @@ public class SplayTree {
                 
     }
 
+    /**
+     * Method that checks if the tree is empty.
+     * @return boolean.
+     */
     public boolean isEmpty() {
 
         return root == null;
 
     }
     
+    /**
+     * Method that checks if a enterprise is in the tree.
+     * @param name String name of the enterprise.
+     * @return boolean
+     */
     public boolean contains(String name) {
 
         return containsAux(name) != null;
 
     }
     
+    /**
+     * Auxiliary method of contains method.
+     * @param name String name of the enterprise.
+     * @return NodeSplayTree.
+     */
     private NodeSplayTree containsAux(String name) {
         
         NodeSplayTree PrevNode = null;
@@ -79,12 +103,22 @@ public class SplayTree {
         
     }
         
+    /**
+     * Method that gets a enterprise of the tree.
+     * @param name String name of the enterprise.
+     * @return Enterprise
+     */
     public Enterprise getEnterprise(String name) {
 
         return getEnterpriseAux(name).getEnterprise();
 
     }
     
+    /**
+     * Auxiliary method of getEnterprise method.
+     * @param name String name of the enterprise.
+     * @return NodeSplayTree.
+     */
     private NodeSplayTree getEnterpriseAux(String name) {
         
         NodeSplayTree PrevNode = null;
@@ -125,6 +159,11 @@ public class SplayTree {
         
     }
     
+    /**
+     * Method that sets the left children node as a parent.
+     * @param parent NodeSplayTree parent of the node.
+     * @param grandParent NodeSplayTree grandParent of the node.
+     */
     public void makeLeftChildParent(NodeSplayTree parent, NodeSplayTree grandParent) {
 
         if ((parent == null) || (grandParent == null) || (grandParent.getLeft() != parent)
@@ -161,6 +200,11 @@ public class SplayTree {
 
     }
 
+    /**
+     * Method that sets the right children node as a parent.
+     * @param parent NodeSplayTree parent of the node.
+     * @param grandParent NodeSplayTree grandParent of the node.
+     */
     public void makeRightChildParent(NodeSplayTree parent, NodeSplayTree grandParent) {
 
         if ((parent == null) || (grandParent == null) || (grandParent.getRight() != parent)
@@ -197,6 +241,10 @@ public class SplayTree {
 
     }
 
+    /**
+     * Method that splay the tree.
+     * @param node NodeSplayTree root of the tree.
+     */
     private void Splay(NodeSplayTree node) {
 
         while (node.getParent() != null) {
@@ -252,6 +300,15 @@ public class SplayTree {
 
     } 
         
+    /**
+     * Method that inserts enterprises in the tree.
+     * @param name String name of the enterprise.
+     * @param logo String logo of the enterprise.
+     * @param contact String contact of the enterprise.
+     * @param schedule String schedule of the enterprise.
+     * @param direction String direction of the enterprise.
+     * @param members ArrayList members of the enterprise.
+     */
     public void insert(String name, String logo, String contact, String schedule, String direction, ArrayList<String> members) {
         
         Enterprise newEnterprise = new Enterprise(name,logo,contact,schedule,direction,members);
@@ -260,6 +317,10 @@ public class SplayTree {
         
     }
      
+    /**
+     * Auxiliary method of insert method.
+     * @param newEnterprise Enterprise newEnterprise to insert.
+     */
     private void insertAux(Enterprise newEnterprise) {
                 
         NodeSplayTree node1 = this.root;
@@ -315,15 +376,25 @@ public class SplayTree {
         
     }
         
+    /**
+     * Method that walks through the tree.
+     * @return ArrayList.
+     */
     public ArrayList<Enterprise> inOrder() {
 
-        this.recipeList.clear();
+        this.enterpriseList.clear();
 
-        return this.inOrderAux(recipeList, this.root);
+        return this.inOrderAux(enterpriseList, this.root);
 
     }
 
-    private ArrayList<Enterprise> inOrderAux(ArrayList<Enterprise> recipeList, NodeSplayTree node) {
+    /**
+     * Auxiliary method of inOrder method.
+     * @param recipeList ArrayList<Recipe> recipeList list of recipes.
+     * @param node NodeAVLTree root of the tree.
+     * @return ArrayList.
+     */
+    private ArrayList<Enterprise> inOrderAux(ArrayList<Enterprise> enterpriseList, NodeSplayTree node) {
 
         if (node == null) {
 
@@ -331,14 +402,20 @@ public class SplayTree {
 
         }
 
-        inOrderAux(recipeList, node.getLeft());
-        recipeList.add(node.getEnterprise());
-        inOrderAux(recipeList, node.getRight());
+        inOrderAux(enterpriseList, node.getLeft());
+        enterpriseList.add(node.getEnterprise());
+        inOrderAux(enterpriseList, node.getRight());
 
-        return recipeList;
+        return enterpriseList;
 
     }
     
+    /**
+     * Method that gets the matches of enterprise names of the tree.
+     * @param name String name of the enterprise.
+     * @param endIndex int endIndex last index of the string of the enterprise name.
+     * @return ArrayList.
+     */
     public ArrayList<Enterprise> matches(String name, int endIndex) {
                         
         ArrayList<Enterprise> matchesList = new ArrayList<Enterprise>();
@@ -371,6 +448,14 @@ public class SplayTree {
  
     }
     
+    /**
+     * Auxiliary method of matches method.
+     * @param matchesList ArrayList<Enterprise> matchesList list of enterprises.
+     * @param name String name of the enterprise.
+     * @param endIndex int endIndex last index of the string of the enterprise name.
+     * @param node NodeSplayTree root of the tree.
+     * @return ArrayList.
+     */
     private ArrayList<Enterprise> matchesAux(ArrayList<Enterprise> matchesList, String name, int endIndex, NodeSplayTree node) {
         
       if (node == null) {

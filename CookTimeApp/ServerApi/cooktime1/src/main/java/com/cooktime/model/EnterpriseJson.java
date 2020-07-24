@@ -9,12 +9,26 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * Class in charge of writing int the enterprises json file.
+ */
 public class EnterpriseJson {
     
-    private static SplayTree splayTree = SplayTree.getInstance();
-    private static AVLTree avlTree = AVLTree.getInstance();
+    private static final SplayTree splayTree = SplayTree.getInstance();
+    private static final AVLTree avlTree = AVLTree.getInstance();
     private static final String directionJson = "C:\\Users\\ExtremeTech\\Documents\\NetBeansProjects\\CookTime-RestApi\\cooktime1\\enterprises.json";
     
+    /**
+     * Method that inserts enterpises in the json file.
+     * @param name String name of the enterprise.
+     * @param logo String logo of the enterprise.
+     * @param contact String contact of the enterprise.
+     * @param schedule String schedule of the enterprise.
+     * @param direction String direction of the enterprise.
+     * @param members ArrayList members of the enterprise.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     public static void insert(String name, String logo, String contact, String schedule,
                               String direction, ArrayList<String> members) throws JSONException,
                               IOException {
@@ -31,6 +45,11 @@ public class EnterpriseJson {
                 
     }   
     
+    /**
+     * Method that inserts califications in the json file.
+     * @param name String name of the enterprise.
+     * @param newCalification int newCalification of the enterprise.
+     */
     public static void insertCalification(String name, int newCalification) {         
             
         Enterprise enterprise = splayTree.getEnterprise(name);
@@ -52,6 +71,10 @@ public class EnterpriseJson {
 
     }
         
+    /**
+     * Method that inserts followers in the json file.
+     * @param name String name of the enterprise.
+     */
     public static void insertFollowers(String name) {
         
         Enterprise enterprise = splayTree.getEnterprise(name);
@@ -75,6 +98,11 @@ public class EnterpriseJson {
 
     }
     
+    /**
+     * Method that inserts myMenuList in the json file.
+     * @param name String name of the enterprise.
+     * @param newRecipe String newRecipe to insert.
+     */
     public static void insertMyMenuList(String name, String newRecipe) {
         
         Enterprise enterprise = splayTree.getEnterprise(name);
@@ -98,8 +126,21 @@ public class EnterpriseJson {
 
     }       
         
+    /**
+     * Method that creates enterpises json objects.
+     * @param name String name of the enterprise.
+     * @param logo String logo of the enterprise.
+     * @param contact String contact of the enterprise.
+     * @param schedule String schedule of the enterprise.
+     * @param direction String direction of the enterprise.
+     * @param calification int calification of the enterprise.
+     * @param followers int followers of the enterprise.
+     * @param members ArrayList<String> members of the enterprise.
+     * @param myMenuList ArrayList<Recipe> myMenuList of the enterprise.
+     * @return JSONObject
+     */
     private static JSONObject createJsonEnterprise(String name, String logo, String contact, String schedule, String direction, int calification, int followers,
-                      ArrayList<String> members, ArrayList<Recipe> myMenuList) {
+                                                   ArrayList<String> members, ArrayList<Recipe> myMenuList) {
         
         JSONObject enterpriseJson = new JSONObject();
 
@@ -117,6 +158,12 @@ public class EnterpriseJson {
         
     }
     
+    /**
+     * Method that searches enterprise index in the array.
+     * @param array JSONArray array of enterprises.
+     * @param name String name of the enterprise.
+     * @return int
+     */
     private static int searchIndex(JSONArray array, String name) {               
         
         int index = 0;
@@ -139,6 +186,12 @@ public class EnterpriseJson {
         
     }
     
+    /**
+     * Method that inserts enterpises in the json file.
+     * @param newEnterpriseJson JSONObject newEnterpriseJson to insert in the json file.
+     * @param name String name of the enterprise.
+     * @param indicator boolean indicator to check it is the first insertion.
+     */
     private static void writeJson(JSONObject newEnterpriseJson, String name, boolean indicator) {
         
         JSONParser parser = new JSONParser();

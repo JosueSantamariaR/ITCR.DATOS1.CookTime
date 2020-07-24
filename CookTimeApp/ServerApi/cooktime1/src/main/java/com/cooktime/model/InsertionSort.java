@@ -2,8 +2,16 @@ package com.cooktime.model;
 
 import java.util.ArrayList;
 
+/**
+ * Class in charge of insertionsorting a list.
+ */
 public class InsertionSort {
     
+    /**
+     * Method that sorts the array.
+     * @param array ArrayList array to sort.
+     * @param lastSort String lastSort of the list.
+     */
     public void sort(ArrayList<Recipe> array, String lastSort) {
         
         Recipe aux;
@@ -13,8 +21,6 @@ public class InsertionSort {
             for (int i = 1; i < array.size(); i++) {
 
                 aux = array.get(i);
-
-                //for (int j = i - 1; j >= 0 && array.get(j).getPublication() > aux.getPublication(); j--) {
                 
                 for (int j = i - 1; j >= 0 && array.get(j).getYear()>= aux.getYear()
                                            && array.get(j).getMonth()>= aux.getMonth()

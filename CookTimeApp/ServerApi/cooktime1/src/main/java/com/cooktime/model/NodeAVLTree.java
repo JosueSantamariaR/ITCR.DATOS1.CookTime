@@ -1,7 +1,8 @@
 package com.cooktime.model;
 
-import com.cooktime.model.Recipe;
-
+/**
+ * Class in charge of creating AVLTree nodes.
+ */
 public class NodeAVLTree {
     
     private Recipe recipe;
@@ -9,6 +10,10 @@ public class NodeAVLTree {
     private NodeAVLTree right;
     private int height;
     
+    /**
+     * Constructor of this class.
+     * @param recipe Recipe recipe to insert.
+     */
     public NodeAVLTree(Recipe recipe) {
         
         this.recipe = recipe;
@@ -63,49 +68,6 @@ public class NodeAVLTree {
     public void setHeight(int height) {
         
         this.height = height;
-        
-    }
-
-    @Override
-    public int hashCode() {
-        
-        int hash = 5;
-        hash = 89 * hash + (this.recipe != null ? this.recipe.hashCode() : 0);
-        
-        return hash;
-        
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        
-        if (this == obj) {
-            
-            return true;
-            
-        }
-        
-        if (obj == null) {
-            
-            return false;
-            
-        }
-        
-        if (getClass() != obj.getClass()) {
-            
-            return false;
-            
-        }
-        
-        final NodeAVLTree other = (NodeAVLTree) obj;
-        
-        if (this.recipe != other.getRecipe() && (this.recipe == null || !this.recipe.equals(other.getRecipe()))) {
-            
-            return false;
-            
-        }
-        
-        return true;
         
     }
         

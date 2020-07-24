@@ -2,8 +2,15 @@ package com.cooktime.model;
 
 import java.util.ArrayList;
 
+/**
+ * Class in charge of bubblesorting a list.
+ */
 public class BubbleSort {
 
+    /**
+     * Method that sorts the array.
+     * @param array ArrayList array to sort.
+     */
     public void sort(ArrayList<Recipe> array) {
 
         Recipe aux;

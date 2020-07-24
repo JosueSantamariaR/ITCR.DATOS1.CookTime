@@ -49,10 +49,8 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <template:NewsFeedTemplate
-                            x:Name="template"
-                            ChildElement="{Binding Source={x:Reference template}}"
-                            ParentBindingContext="{Binding Path=BindingContext, Source={x:Reference bookmarksPage}}"
-                            ParentElement="{Binding Source={x:Reference StackLayout}}" />
+                            x:Name="template"></template:NewsFeedTemplate>
+                            
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>

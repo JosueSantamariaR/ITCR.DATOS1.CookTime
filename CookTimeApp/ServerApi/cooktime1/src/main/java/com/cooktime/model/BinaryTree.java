@@ -7,18 +7,28 @@ import java.util.ArrayList;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Class in charge of creating the Binary Tree.
+ */
 public class BinaryTree {
     
     private static BinaryTree instance = null;
     private NodeBinaryTree root;
-    private ArrayList<User> userList = new ArrayList<User>();
+    private final ArrayList<User> userList = new ArrayList<User>();
 
+    /**
+     * Constructor of this class.
+     */
     private BinaryTree() {
 
         this.root = null;
 
     }
     
+    /**
+     * Method that creates only one instance of this class.
+     * @return BinaryTree instance of the tree.
+     */
     public static BinaryTree getInstance() {
         
         if (instance == null) {
@@ -31,18 +41,32 @@ public class BinaryTree {
                 
     }
 
+    /**
+     * Method that checks if the tree is empty.
+     * @return boolean.
+     */
     public boolean isEmpty() {
 
         return this.root == null;
 
     }
     
+     /**
+     * Method that checks if a user is in the tree.
+     * @param email String email of the user.
+     * @return boolean.
+     */
     public boolean contains(String email) {
         
         return this.containsAux(email, this.root);
         
     }
     
+    /**
+     * Auxiliary method of contains method.
+     * @param email String email of the user.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private boolean containsAux(String email, NodeBinaryTree node) {
         
         if (node == null) {
@@ -71,12 +95,22 @@ public class BinaryTree {
         
     }
     
+    /**
+     * Method that gets a user of the tree.
+     * @param email String email of the user.
+     * @return User.
+     */
     public User getUser(String email) {
         
         return this.getUserAux(email, this.root);
         
     }
     
+    /**
+     * Auxiliary method of getUser method.
+     * @param emial String emial of the user.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private User getUserAux(String email, NodeBinaryTree node) {        
                     
         int compareResult = email.compareTo(node.getUser().getEmail());
@@ -99,6 +133,10 @@ public class BinaryTree {
         
     }
     
+    /**
+     * Method that gets the minimun node in the tree.
+     * @return User. 
+     */
     public User findMin() {
         
         if (this.isEmpty()) {
@@ -113,6 +151,10 @@ public class BinaryTree {
         
     }       
     
+    /**
+     * Auxiliary method of findMin method.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private User findMinAux(NodeBinaryTree node) {
         
         if (node == null) {
@@ -131,6 +173,10 @@ public class BinaryTree {
         
     }
     
+    /**
+     * Method that gets the maximun node in the tree.
+     * @return User.
+     */
     public User findMax() {
 
         if (this.isEmpty()) {
@@ -145,6 +191,10 @@ public class BinaryTree {
         
     }
         
+    /**
+     * Auxiliary method of findMax method.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private User findMaxAux(NodeBinaryTree node) {
         
         if (node!= null) {
@@ -161,6 +211,16 @@ public class BinaryTree {
         
     }
        
+    /**
+     * Method that inserts users in the tree.
+     * @param email String email of the user.
+     * @param name String name of the user.
+     * @param lastName String lastName of the user.
+     * @param age int age of the user.
+     * @param password String password of the user.
+     * @param photo String photo of the user.
+     * @param chef boolean chef of the user.
+     */
     public void insert(String email, String name, String lastName, int age, String password, String photo, boolean chef) {
         
         String newPassword = encrypte(password);        
@@ -171,6 +231,11 @@ public class BinaryTree {
         
     }
         
+    /**
+     * Auxiliary method of insert method.
+     * @param newUser User newUser to insert.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private NodeBinaryTree insertAux(User newUser, NodeBinaryTree node) {
     
         if (node == null) {
@@ -195,12 +260,21 @@ public class BinaryTree {
     
     }
     
+    /**
+     * Method that removes a user of the tree.
+     * @param email String email of the user.
+     */
     public void remove(String email) {
  
         this.root = this.removeAux(email, this.root);
  
     }
     
+    /**
+     * Auxiliary method of remove method.
+     * @param email String email of the user.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private NodeBinaryTree removeAux(String email, NodeBinaryTree node) {
         
         if (node == null) {
@@ -234,6 +308,10 @@ public class BinaryTree {
         
     }
     
+    /**
+     * Method that walks through the tree.
+     * @return ArrayList.
+     */
     public ArrayList<User> inOrder() {
         
         this.userList.clear();
@@ -242,6 +320,11 @@ public class BinaryTree {
       
     }
     
+    /**
+     * Auxiliary method of inOrder method.
+     * @param userList ArrayList<User>  userList list of users.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private ArrayList<User> inOrderAux(ArrayList<User> userList, NodeBinaryTree node) {
         
       if (node == null) {
@@ -258,6 +341,12 @@ public class BinaryTree {
       
     }
     
+    /**
+     * Method that gets the matches of user names of the tree.
+     * @param name String name of the user.
+     * @param endIndex int endIndex last index of the string of the user name.
+     * @return ArrayList.
+     */
     public ArrayList<User> matches(String name, int endIndex) {
                         
         ArrayList<User> matchesList = new ArrayList<User>();
@@ -290,6 +379,13 @@ public class BinaryTree {
  
     }
     
+    /**
+     * Auxiliary method of matches method.
+     * @param matchesList ArrayList<User> matchesList list of users.
+     * @param name String name of the user.
+     * @param endIndex int endIndex last index of the string of the user name.
+     * @param node NodeBinaryTree root of the tree.
+     */
     private ArrayList<User> matchesAux(ArrayList<User> matchesList, String name, int endIndex, NodeBinaryTree node) {
         
       if (node == null) {
@@ -320,6 +416,11 @@ public class BinaryTree {
       
     }
     
+    /**
+     * Method that encryptes the user password.
+     * @param password String password of the user.
+     * @return ArrayList.
+     */
     public String encrypte(String password) {
         
         Charset UTF_8 = StandardCharsets.UTF_8;
@@ -332,6 +433,11 @@ public class BinaryTree {
         
     }
     
+    /**
+     * Method that digests the user password.
+     * @param input byte[] password of the user.
+     * @return byte[].
+     */
     private byte[] digest(byte[] input) {
 
         MessageDigest md;
@@ -351,6 +457,11 @@ public class BinaryTree {
 
     }
 
+    /**
+     * Method that converts byte to hex.
+     * @param bytes byte[] password of the user.
+     * @return String.
+     */
     private String bytesToHex(byte[] bytes) {
 
         StringBuilder sb = new StringBuilder();

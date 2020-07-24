@@ -12,9 +12,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-
+/**
+ * Class in charge of creating the Server interface.
+ */
 public class ServerWindow extends javax.swing.JFrame {
 
+    /**
+     * Constructor of the window.
+     */
     public ServerWindow() {     
         
         initComponents();

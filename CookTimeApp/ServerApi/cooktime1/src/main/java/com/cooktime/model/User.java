@@ -2,6 +2,9 @@ package com.cooktime.model;
 
 import java.util.ArrayList;
 
+/**
+ * Class in charge of creating users.
+ */
 public class User {
     
     private String email;
@@ -16,12 +19,26 @@ public class User {
     private int followed = 0;
     private boolean chef;
         
+    /**
+     * Constructor of this class.
+     * @param email String email of the user.
+     */
     public User(String email) {
         
         this.email = email;
         
     }
 
+    /**
+     * Constructor of this class.
+     * @param email String email of the user.
+     * @param name String name of the user.
+     * @param lastName String lastName of the user.
+     * @param age int age of the user.
+     * @param password String password of the user.
+     * @param photo String photo of the user.
+     * @param chef boolean chef of the user.
+     */
     public User(String email, String name, String lastName, int age, String password,
                 String photo, boolean chef) {
         
@@ -35,9 +52,21 @@ public class User {
         
     }
     
+    /**
+     * Constructor of this class.
+     * @param email String email of the user.
+     * @param name String name of the user.
+     * @param lastName String lastName of the user.
+     * @param age int age of the user.
+     * @param password String password of the user.
+     * @param photo String photo of the user.
+     * @param myMenuList ArrayList myMenuList of the user.
+     * @param followers int followers of the user.
+     * @param followed int followed of the user
+     * @param chef boolean chef of the user.
+     */
     public User(String email, String name, String lastName, int age, String password, String photo,
-                ArrayList<Recipe> myMenuList, int followers, int followed,
-                boolean chef) {
+                ArrayList<Recipe> myMenuList, int followers, int followed, boolean chef) {
         
         BubbleSort bubbleSort = new BubbleSort();
         
@@ -187,30 +216,5 @@ public class User {
         this.chef = chef;
         
     }
-    
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + (this.email != null ? this.email.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final User other = (User) obj;
-        if ((this.email == null) ? (other.email != null) : !this.email.equals(other.email)) {
-            return false;
-        }
-        return true;
-    }
-    
+        
 }

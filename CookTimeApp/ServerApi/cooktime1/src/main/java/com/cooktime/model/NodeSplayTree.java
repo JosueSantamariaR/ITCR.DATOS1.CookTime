@@ -1,5 +1,8 @@
 package com.cooktime.model;
 
+/**
+ * Class in charge of creating SplayTree nodes.
+ */
 public class NodeSplayTree {
     
     private Enterprise enterprise;
@@ -7,6 +10,9 @@ public class NodeSplayTree {
     private NodeSplayTree right;
     private NodeSplayTree parent;
     
+    /**
+     * Constructor of this class.
+     */
     public NodeSplayTree() {
         
         this.enterprise = null;
@@ -16,6 +22,10 @@ public class NodeSplayTree {
         
     }
 
+    /**
+     * Constructor of this class.
+     * @param enterprise Enterprise enterprise to insert.
+     */
     public NodeSplayTree(Enterprise enterprise) {
         
         this.enterprise = enterprise;
@@ -25,6 +35,13 @@ public class NodeSplayTree {
         
     }
     
+    /**
+     * Constructor of this class.
+     * @param enterprise Enterprise enterprise to insert.
+     * @param left NodeSplayTree left node.
+     * @param right NodeSplayTree right node.
+     * @param parent NodeSplayTree parent node.
+     */
     public NodeSplayTree(Enterprise enterprise, NodeSplayTree left,
                          NodeSplayTree right, NodeSplayTree parent) {
         

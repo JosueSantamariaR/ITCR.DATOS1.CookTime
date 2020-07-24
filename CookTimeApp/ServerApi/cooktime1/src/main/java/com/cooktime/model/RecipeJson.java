@@ -7,11 +7,32 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * Class in charge of writing int the recipes json file.
+ */
 public class RecipeJson {
 
-    private static AVLTree aVLTree = AVLTree.getInstance();
+    private static final AVLTree aVLTree = AVLTree.getInstance();
     private static final String directionJson = "C:\\Users\\ExtremeTech\\Documents\\NetBeansProjects\\CookTime-RestApi\\cooktime1\\recipes.json";
 
+    /**
+     * Method that inserts recipes in the json file.
+     * @param name String name of the recipe.
+     * @param author String author of the recipe.
+     * @param type String type of the recipe.
+     * @param portions String portions of the recipe.
+     * @param duration int duration of the recipe.
+     * @param time String time of the recipe.
+     * @param difficulty  difficulty of the recipe.
+     * @param dietTag String dietTag of the recipe.
+     * @param photo String photo of the recipe.
+     * @param ingredients String ingredients of the recipe.
+     * @param steps String steps of the recipe.
+     * @param price int price of the recipe.
+     * @param day int day of the recipe.
+     * @param month int month of the recipe.
+     * @param year  int  year of the recipe.
+     */
     public static void insert(String name, String author, String type, int portions, int duration,
                               String time, int difficulty, String dietTag, String photo, String ingredients,
                               String steps, int price, int day, int month, int year) {
@@ -29,6 +50,11 @@ public class RecipeJson {
 
     }
     
+    /**
+     * Method that inserts califications in the json file.
+     * @param name String name of the recipe.
+     * @param newCalification int newCalification of the recipe.
+     */
     public static void insertCalification(String name, int newCalification) {         
             
         Recipe recipe = aVLTree.getRecipe(name);
@@ -59,6 +85,11 @@ public class RecipeJson {
 
     }
     
+    /**
+     * Method that inserts califications in the json file.
+     * @param name String name of the recipe.
+     * @param newCommentary String newCommentary of the recipe.
+     */
     public static void insertCommentary(String name, String newCommentary) {         
             
         Recipe recipe = aVLTree.getRecipe(name);
@@ -91,6 +122,27 @@ public class RecipeJson {
 
     }
     
+    /**
+     * Method that creates recipes json objects.
+     * @param name String name of the recipe.
+     * @param author String author of the recipe.
+     * @param type String type of the recipe.
+     * @param portions String portions of the recipe.
+     * @param duration int duration of the recipe.
+     * @param time String time of the recipe.
+     * @param difficulty  difficulty of the recipe.
+     * @param dietTag String dietTag of the recipe.
+     * @param photo String photo of the recipe.
+     * @param ingredients String ingredients of the recipe.
+     * @param steps String steps of the recipe.
+     * @param price int price of the recipe.
+     * @param calification int calification of the recipe.
+     * @param day int day of the recipe.
+     * @param month int month of the recipe.
+     * @param year  int  year of the recipe.
+     * @param commentary StrArrayList<String> commentary list of the recipe.
+     * @return JSONObject
+     */
     private static JSONObject createJsonRecipe(String name, String author, String type, int portions, int duration, String time,
                                                int difficulty, String dietTag, String photo, String ingredients, String steps,
                                                int price, int calification, int day, int month, int year, ArrayList<String> commentary) {
@@ -119,6 +171,12 @@ public class RecipeJson {
         
     }
     
+    /**
+     * Method that searches recipe index in the array.
+     * @param array JSONArray array of recipes.
+     * @param name String name of the recipe.
+     * @return int
+     */
     private static int searchIndex(JSONArray array, String name) {               
         
         int index = 0;
@@ -141,6 +199,12 @@ public class RecipeJson {
         
     }
     
+    /**
+     * Method that inserts recipes in the json file.
+     * @param newRecipeJson JSONObject newRecipeJson to insert in the json file.
+     * @param name String name of the recipe.
+     * @param indicator boolean indicator to check it is the first insertion.
+     */
     private static void writeJson(JSONObject newRecipeJson, String name, boolean indicator) {
         
         JSONParser parser = new JSONParser();

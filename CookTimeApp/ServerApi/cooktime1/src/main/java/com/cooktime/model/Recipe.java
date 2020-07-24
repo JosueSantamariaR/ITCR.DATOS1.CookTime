@@ -2,6 +2,9 @@ package com.cooktime.model;
 
 import java.util.ArrayList;
 
+/**
+ * Class in charge of creating recipes.
+ */
 public class Recipe {
     
     private String name;
@@ -22,6 +25,24 @@ public class Recipe {
     private int year;
     private ArrayList<String> commentary = new ArrayList<String>();
 
+    /**
+     * Constructor of this class.
+     * @param name String name of the recipe.
+     * @param author String author of the recipe.
+     * @param type String type of the recipe.
+     * @param portions String portions of the recipe.
+     * @param duration int duration of the recipe.
+     * @param time String time of the recipe.
+     * @param difficulty  difficulty of the recipe.
+     * @param dietTag String dietTag of the recipe.
+     * @param photo String photo of the recipe.
+     * @param ingredients String ingredients of the recipe.
+     * @param steps String steps of the recipe.
+     * @param price int price of the recipe.
+     * @param day int day of the recipe.
+     * @param month int month of the recipe.
+     * @param year  int  year of the recipe.
+     */
     public Recipe(String name, String author, String type, int portions, int duration,
                   String time, int difficulty, String dietTag, String photo, String ingredients,
                   String steps, int price, int day, int month, int year) {
@@ -44,6 +65,26 @@ public class Recipe {
         
     }
     
+    /**
+     * Constructor of this class.
+     * @param name String name of the recipe.
+     * @param author String author of the recipe.
+     * @param type String type of the recipe.
+     * @param portions String portions of the recipe.
+     * @param duration int duration of the recipe.
+     * @param time String time of the recipe.
+     * @param difficulty  difficulty of the recipe.
+     * @param dietTag String dietTag of the recipe.
+     * @param photo String photo of the recipe.
+     * @param ingredients String ingredients of the recipe.
+     * @param steps String steps of the recipe.
+     * @param price int price of the recipe.
+     * @param calification int calification of the recipe.
+     * @param day int day of the recipe.
+     * @param month int month of the recipe.
+     * @param year  int  year of the recipe.
+     * @param commentary ArrayList commentary of the recipe.
+     */
     public Recipe(String name, String author, String type, int portions, int duration,
                   String time, int difficulty, String dietTag, String photo, String ingredients,
                   String steps, int price, int calification, int day, int month, int year,

@@ -20,13 +20,22 @@ import javax.ws.rs.core.Response;
 import org.codehaus.jettison.json.JSONException;
 import org.json.simple.parser.ParseException;
 
+/**
+ * Class in charge of creating the services of the REST API.
+ */
 @Path("services")
 public class Services {
     
-    private BinaryTree binaryTree = BinaryTree.getInstance();
-    private AVLTree avltree = AVLTree.getInstance();
-    private SplayTree splayTree = SplayTree.getInstance();
+    private final BinaryTree binaryTree = BinaryTree.getInstance();
+    private final AVLTree avltree = AVLTree.getInstance();
+    private final SplayTree splayTree = SplayTree.getInstance();
     
+    /**
+     * Method that gets all users of the tree.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getAllUsers/")
     @Produces(MediaType.APPLICATION_JSON)
@@ -36,6 +45,13 @@ public class Services {
         
     }    
     
+    /**
+     * Method that gets a user of the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getUser/{email}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -51,6 +67,13 @@ public class Services {
         
     }
     
+    /**
+     * Method that gets a user myMenuList of the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getUserMyMenuList/{email}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -66,6 +89,13 @@ public class Services {
         
     }
     
+    /**
+     * Method that gets users myMenuList of the tree.
+     * @param users String users of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getUsersMyMenuList/{users}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -85,6 +115,13 @@ public class Services {
                                                         
     }
             
+    /**
+     * Method that gets user matches in the tree.
+     * @param name String name of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getUserMatch/{name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -96,6 +133,20 @@ public class Services {
                             
     }
     
+    /**
+     * Method that posts a user in the tree.
+     * @param email String email of the user.
+     * @param name String name of the user.
+     * @param lastName String lastName of the user.
+     * @param age String age of the user.
+     * @param password String password of the user.
+     * @param photo String photo of the user.
+     * @param chef String chef of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postUser/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -122,6 +173,14 @@ public class Services {
       
     }  
         
+    /**
+     * Method that posts a chef in the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postChef/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -140,6 +199,15 @@ public class Services {
       
     }    
         
+    /**
+     * Method that posts a myMenuList in the tree.
+     * @param email String email of the user.
+     * @param newRecipe String newRecipe of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postUserMyMenuList/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -159,6 +227,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that bubblesorts the myMenuList of the user in the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postUserBubbleSort/{email}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -176,18 +252,20 @@ public class Services {
       
     }
     
+    /**
+     * Method that quicksorts the myMenuList of the user in the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postUserQuickSort/{email}")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postUserQuickSort(@PathParam("email") String email) throws JSONException, IOException, ParseException {
               
         if (binaryTree.contains(email)) {
-            
-            //JSONParser parser = new JSONParser();
-            
-            //Object object = parser.parse(myMenuList);
-
-            //JSONArray myMenuListJson = (JSONArray) object;
 
             UserJson.insertQuickSort(email);
             
@@ -199,6 +277,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that radixsorts the myMenuList of the user in the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postUserRadixSort/{email}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -206,12 +292,6 @@ public class Services {
               
         if (binaryTree.contains(email)) {
             
-            //JSONParser parser = new JSONParser();
-            
-            //Object object = parser.parse(myMenuList);
-
-            //JSONArray myMenuListJson = (JSONArray) object;
-
             UserJson.insertRadixSort(email);
             
             return Response.status(Response.Status.CREATED).entity(binaryTree.getUser(email).getMyMenuList()).build();                          
@@ -222,6 +302,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that posts followers in the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postUserFollowers/{email}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -239,6 +327,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that posts followeed in the tree.
+     * @param email String email of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postUserFollowed/{email}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -257,7 +353,13 @@ public class Services {
     }
     
     // --------------------------------------------------------------------------------------------------------------------------------
-        
+       
+    /**
+     * Method that gets all recipes of the tree.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getAllRecipes/")
     @Produces(MediaType.APPLICATION_JSON)
@@ -267,6 +369,13 @@ public class Services {
         
     }        
     
+    /**
+     * Method that gets a user of the tree.
+     * @param name String name of the recipe.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getRecipe/{name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -282,6 +391,13 @@ public class Services {
         
     }
     
+    /**
+     * Method that gets recipe matches in the tree.
+     * @param name String name of the recipe.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getRecipeMatch/{name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -293,10 +409,13 @@ public class Services {
                             
     }
     
-    
-    
-    
-    
+    /**
+     * Method that gets recipes using the filter.
+     * @param type String type filter.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getRecipeTypeFilter/{type}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -306,8 +425,13 @@ public class Services {
                             
     }
     
-    
-    
+    /**
+     * Method that gets recipes using the filter.
+     * @param time String time filter.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getRecipeTimeFilter/{time}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -317,8 +441,13 @@ public class Services {
                             
     }
     
-    
-    
+    /**
+     * Method that gets recipes using the filter.
+     * @param dietTag String dietTag filter.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getRecipeDietTagFilter/{dietTag}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -326,36 +455,27 @@ public class Services {
         
         return Response.ok(avltree.dietTagFilter(dietTag)).build();                              
                             
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                
+    }   
+           
+    /**
+     * Method that posts a recipe in the tree.
+     * @param name String name of the recipe.
+     * @param author String author of the recipe.
+     * @param type String type of the recipe.
+     * @param portions String portions of the recipe.
+     * @param duration String duration of the recipe.
+     * @param time String time of the recipe.
+     * @param difficulty String difficulty of the recipe.
+     * @param dietTag String dietTag of the recipe.
+     * @param ingredients String ingredients of the recipe.
+     * @param steps String steps of the recipe.
+     * @param price String price of the recipe.
+     * @param publication String publication of the recipe.
+     * @param photo String photo of the recipe.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @POST
     @Path("/postRecipe/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -398,6 +518,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that posts califications in the tree.
+     * @param name String name of the recipe.
+     * @param calification String calification of the recipe.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @POST
     @Path("/postRecipeCalification/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -419,6 +547,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that posts commentary in the tree.
+     * @param name String name of the recipe.
+     * @param commentary String commentary of the recipe.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @POST
     @Path("/postRecipeCommentary/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -440,6 +576,12 @@ public class Services {
     
     // --------------------------------------------------------------------------------------------------------------------------------    
     
+    /**
+     * Method that gets all recipes of the tree.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getAllEnterprises/")
     @Produces(MediaType.APPLICATION_JSON)
@@ -449,6 +591,13 @@ public class Services {
         
     } 
     
+    /**
+     * Method that gets a enterprise of the tree.
+     * @param name String name of the enterprise.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getEnterprise/{name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -464,6 +613,13 @@ public class Services {
         
     }
     
+    /**
+     * Method that gets enterprise matches in the tree.
+     * @param name String name of the enterprise.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @GET
     @Path("/getEnterpriseMatch/{name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -475,6 +631,19 @@ public class Services {
                             
     }
     
+     /**
+     * Method that posts a enterprise in the tree.
+     * @param name String name of the enterprise.
+     * @param logo String logo of the enterprise.
+     * @param contact String contact of the enterprise.
+     * @param schedule String schedule of the enterprise.
+     * @param direction String direction of the enterprise.
+     * @param members String members of the enterprise.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postEnterprise/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -509,6 +678,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that posts califications in the tree.
+     * @param name String name of the enterprise.
+     * @param calification String calification of the enterprise.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     */
     @POST
     @Path("/postEnterpriseCalification/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -530,6 +707,14 @@ public class Services {
       
     }
     
+    /**
+     * Method that posts followers in the tree.
+     * @param name String name of the enterprise.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postEnterpriseFollowers/{name}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -547,6 +732,15 @@ public class Services {
       
     }
     
+    /**
+     * Method that posts a myMenuList in the tree.
+     * @param name String name of the enterprise.
+     * @param newRecipe String newRecipe of the user.
+     * @return Response.
+     * @throws org.codehaus.jettison.json.JSONException
+     * @throws java.io.IOException
+     * @throws org.json.simple.parser.ParseException
+     */
     @POST
     @Path("/postEnterpriseMyMenuList/")
     @Consumes(MediaType.APPLICATION_JSON)

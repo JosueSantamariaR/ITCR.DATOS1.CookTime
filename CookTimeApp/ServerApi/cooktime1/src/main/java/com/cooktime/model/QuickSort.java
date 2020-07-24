@@ -2,8 +2,17 @@ package com.cooktime.model;
 
 import java.util.ArrayList;
 
+/**
+ * Class in charge of quicksorting a list.
+ */
 public class QuickSort {
           
+    /**
+     * Method that sorts the array.
+     * @param array ArrayList array to sort.
+     * @param minIndex int minIndex of the array.
+     * @param maxIndex int maxIndex of the array. 
+     */
     public void sort(ArrayList<Recipe> array, int minIndex, int maxIndex) {
                 
         int i = minIndex;
