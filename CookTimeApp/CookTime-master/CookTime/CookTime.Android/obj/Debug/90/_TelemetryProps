@@ -23,6 +23,10 @@ AndroidDexTool=d8
 AndroidLinkTool=
 AndroidEnableProfiledAot=false
 AndroidInstallAfterBuild=True
+<<<<<<< HEAD
 AndroidSessionId=3509e173-b198-4793-bee4-aebf27e1cfe5
+=======
+AndroidSessionId=fb0cc179-6d48-4913-bb15-dfde9c5a0881
+>>>>>>> parent of 7721de8... Upadate
 BuildConfiguration=Debug
 TemplateName={c9e5eea5-ca05-42a1-839b-61506e0a37df}
