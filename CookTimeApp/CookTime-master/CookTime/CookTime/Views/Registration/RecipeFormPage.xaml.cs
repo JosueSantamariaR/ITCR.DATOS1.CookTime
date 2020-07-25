@@ -151,7 +151,7 @@ namespace CookTime.Views.Forms
                 duration = PreparationTime.Text,
                 ingredients = RecipeIngredients.Text,
                 photo = recetsImages[x],
-                publication = "20/07/20",
+                publication = "20/07/2020",
                 difficulty = DifficultyFactor.Text
             };          
             var json = JsonConvert.SerializeObject(recet);

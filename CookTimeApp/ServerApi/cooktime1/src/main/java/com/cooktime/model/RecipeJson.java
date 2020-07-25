@@ -33,17 +33,19 @@ public class RecipeJson {
      * @param month int month of the recipe.
      * @param year  int  year of the recipe.
      */
-    public static void insert(String name, String author, String type, int portions, int duration,
+    public static void insert(String name, String[] author, String type, int portions, int duration,
                               String time, int difficulty, String dietTag, String photo, String ingredients,
                               String steps, int price, int day, int month, int year) {
 
-        aVLTree.insert(name, author, type, portions, duration, time, difficulty, dietTag, photo, ingredients,
+        aVLTree.insert(name, author[0], type, portions, duration, time, difficulty, dietTag, photo, ingredients,
                        steps, price, day, month, year);
+        
+        aVLTree.getRecipe(name).setEmail(author[1]);
         
         int calification = 0;
         ArrayList<String> commentary = new ArrayList<String>();                 
 
-        JSONObject newRecipeJson = createJsonRecipe(name, author, type, portions, duration, time, difficulty, dietTag, photo, ingredients,
+        JSONObject newRecipeJson = createJsonRecipe(name, author[0], type, portions, duration, time, difficulty, dietTag, photo, ingredients,
                                                     steps, price, calification, day, month, year, commentary);    
                                
         writeJson(newRecipeJson, name, true);

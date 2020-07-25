@@ -9,6 +9,7 @@ public class Recipe {
     
     private String name;
     private String author;
+    private String email = "";
     private String type;
     private int portions;
     private int duration;
@@ -312,5 +313,17 @@ public class Recipe {
         this.commentary = commentary;
         
     }
-       
+
+    public String getEmail() {
+        
+        return email;
+        
+    }
+
+    public void setEmail(String email) {
+        
+        this.email = email;
+        
+    }
+    
 }

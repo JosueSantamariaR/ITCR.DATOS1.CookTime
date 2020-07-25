@@ -44,7 +44,7 @@ namespace CookTime.Views.Forms
         public void CallAPIsync()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://192.168.1.7:8080/cooktime1/api/services/getUser/");
+            client.BaseAddress = new Uri("http://192.168.1.102:8080/cooktime1/api/services/getUser/");
             var user = client.GetAsync(EmailEntry.Text).Result;
             if (user.IsSuccessStatusCode)
             {

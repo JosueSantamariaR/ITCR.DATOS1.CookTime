@@ -127,9 +127,7 @@ public class BinaryTree {
 
         return node.getUser();
 
-        }
-        
-        
+        }               
         
     }
     
@@ -353,7 +351,7 @@ public class BinaryTree {
         
         matchesList = matchesAux(matchesList, name, endIndex, this.root);
         
-        ArrayList<User> finalMatchesList = new ArrayList<User>();
+        ArrayList<User> newMatchesList = new ArrayList<User>();
         
         int cont = 0;
         
@@ -363,7 +361,7 @@ public class BinaryTree {
             
             if (cont < size) {
                                                 
-                finalMatchesList.add(matchesList.get(cont));
+                newMatchesList.add(matchesList.get(cont));
                 
             } else {
                 
@@ -374,7 +372,41 @@ public class BinaryTree {
             cont ++;
             
         }
+        
+        ArrayList<Integer> indexList = new ArrayList<Integer>();
                 
+        for (int i = 0; i < newMatchesList.size(); i ++) {
+            
+            if (newMatchesList.get(i).getChef() == true) {
+                
+                indexList.add(i);
+                                
+            }
+            
+        }
+        
+        ArrayList<User> finalMatchesList = new ArrayList<User>();
+                
+        for (int i = 0; i < indexList.size(); i ++) {
+            
+            finalMatchesList.add(newMatchesList.get(indexList.get(i)));                                                         
+            
+        }
+                
+        for (int i = indexList.size() - 1; i >= 0; i --) {
+            
+            User user = newMatchesList.get(indexList.get(i));
+            
+            newMatchesList.remove(user);
+                        
+        }
+                                
+        for (int i = 0; i < newMatchesList.size(); i ++) {
+                        
+            finalMatchesList.add(newMatchesList.get(i));   
+            
+        }
+        
         return finalMatchesList;
  
     }

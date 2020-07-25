@@ -1,4 +1,5 @@
-﻿using CookTime.ViewModels.News;
+﻿using CookTime.ViewModels.Detail;
+using CookTime.ViewModels.News;
 using CookTime.Views.Detail;
 using CookTime.Views.Forms;
 using Newtonsoft.Json;
@@ -19,8 +20,7 @@ namespace CookTime.ViewModels.Catalog
     public class MyMenuSearchRecipePageViewModel : BaseViewModel
     {
         #region Fields
-
-
+        
         private ObservableCollection<Model> latestStories;
         INavigation Navigation { get; set; }
         #endregion
@@ -31,8 +31,14 @@ namespace CookTime.ViewModels.Catalog
         /// </summary>
         public MyMenuSearchRecipePageViewModel(INavigation _navigation)
         {
+            CallAPIsyncCalification();
             Navigation = _navigation;
-            CallAPIsync();
+           
+                
+            
+           
+                
+            
 
 
             this.MenuCommand = new Command(this.MenuClicked);
@@ -133,12 +139,47 @@ namespace CookTime.ViewModels.Catalog
             Navigation.PushAsync(new SearchRecipeDetailPage(item.ItemData as Recet));
         }
 
-        public void CallAPIsync()
+        public void CallAPIsyncDificulty()
         {
-            MainSearchPage listr = new MainSearchPage();
-            var x = listr.getRecipe();
+
+             SimpleLoginPage usercito = new SimpleLoginPage();
+             User user = usercito.GetUser();
+             
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.7:8080/cooktime1/api/services/getRecipeMatch/{x}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/postUserRadixSort/{user.email}");
+            var recets = client.GetAsync(endopoint).Result;
+            if (recets.IsSuccessStatusCode)
+            {
+                var response = recets.Content.ReadAsStringAsync().Result;
+                var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
+                LatestStories = new ObservableCollection<Recet>(recet);
+
+            }
+        }
+        public void CallAPIsyncCalification()
+        {
+             SimpleLoginPage usercito = new SimpleLoginPage();
+             User user = usercito.GetUser();
+             
+
+            HttpClient client = new HttpClient();
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/postUserQuickSort/@Santa");
+            var recets = client.GetAsync(endopoint).Result;
+            if (recets.IsSuccessStatusCode)
+            {
+                var response = recets.Content.ReadAsStringAsync().Result;
+                var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
+                LatestStories = new ObservableCollection<Recet>(recet);
+
+            }
+        }
+        public void CallAPIsyncPublication()
+        {
+             SimpleLoginPage usercito = new SimpleLoginPage();
+             User user = usercito.GetUser();
+             
+            HttpClient client = new HttpClient();
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/postUserBubbleSort/{user.email}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
