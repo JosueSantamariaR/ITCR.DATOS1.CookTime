@@ -31,7 +31,18 @@ namespace CookTime.ViewModels.Catalog
         /// </summary>
         public MyMenuSearchRecipePageViewModel(INavigation _navigation)
         {
-            CallAPIsyncCalification();
+            MyMenuFilterPage filter = new MyMenuFilterPage();
+            var filterselect = filter.getFilter();
+            if (filterselect == "calification")
+            {
+                CallAPIsyncCalification();
+            }else if(filterselect== "publication")
+            {
+                CallAPIsyncPublication();
+            }else if(filterselect== "difficulty")
+            {
+                CallAPIsyncDificulty();
+            }
             Navigation = _navigation;
            
                 
@@ -146,7 +157,7 @@ namespace CookTime.ViewModels.Catalog
              User user = usercito.GetUser();
              
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/postUserRadixSort/{user.email}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserRadixSort/{user.email}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
@@ -163,7 +174,7 @@ namespace CookTime.ViewModels.Catalog
              
 
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/postUserQuickSort/@Santa");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserQuickSort/{user.email}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
@@ -179,7 +190,7 @@ namespace CookTime.ViewModels.Catalog
              User user = usercito.GetUser();
              
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/postUserBubbleSort/{user.email}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserBubbleSort/{user.email}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
