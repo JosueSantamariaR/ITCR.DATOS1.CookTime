@@ -46,6 +46,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Detail\NewsFeedDetailPage.xaml.cs">
+      <DependentUpon>NewsFeedDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Registration\MainSearchPage.xaml.cs">
       <DependentUpon>MainSearchPage.xaml</DependentUpon>
     </Compile>

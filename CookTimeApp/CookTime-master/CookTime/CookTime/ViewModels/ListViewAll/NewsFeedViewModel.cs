@@ -126,7 +126,7 @@ namespace CookTime.ViewModels.Catalog
         private void ItemSelected(object obj)
         {
             var item = obj as Syncfusion.ListView.XForms.ItemTappedEventArgs;
-            Navigation.PushAsync(new ArticleDetailPage(item.ItemData as Recet));
+            Navigation.PushAsync(new NewsFeedDetailPage(item.ItemData as Recet));
         }
 
 
