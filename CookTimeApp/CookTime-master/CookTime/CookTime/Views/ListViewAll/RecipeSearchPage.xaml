@@ -10,7 +10,7 @@
     xmlns:helper="clr-namespace:CookTime.Helpers"
     xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
     xmlns:template="clr-namespace:CookTime.Views.Templates"
-    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Catalog"
+    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Catalog" xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     x:Name="articleList"
     BackgroundColor="{DynamicResource Gray-White}"
     NavigationPage.HasNavigationBar="False">
@@ -20,36 +20,52 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
             <converter:BooleanToStringConverter x:Key="BoolToStringConverter" />
+
+
+            <DataTemplate x:Key="HorizontalArticleView">
+                <template:RecipeTemplate ParentBindingContext="{Binding Path=BindingContext, Source={x:Reference articleList}}" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="HeaderView">
+                <StackLayout Spacing="5">
+
+
+
+                    <!--  Label for Latest stories  -->
+                    <Label
+                        Margin="0,16,0,0"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="16"
+                        HorizontalOptions="Start"
+                        Text="NewsFeed"
+                        
+                        TextColor="{DynamicResource Gray-800}" />
+                </StackLayout>
+            </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
+
 
 
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="16" Spacing="16">
 
-                
 
-                <!--  Header label  -->
-                <Label
-                    FontFamily="{StaticResource Montserrat-SemiBold}"
-                    FontSize="16"
-                    LineHeight="{OnPlatform Default=-1,
-                                            Android=1.25}"
-                    Text="Recipes"
-                    HorizontalOptions="CenterAndExpand"
-                    TextColor="{DynamicResource Gray-800}" />
-
-                <!--  Featured blog list  -->
-                <StackLayout BindableLayout.ItemsSource="{Binding LatestStories}" Spacing="16">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <template:RecipeTemplate ParentBindingContext="{Binding Path=BindingContext, Source={x:Reference articleList}}" />
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
+                <listView:SfListView
+                x:Name="SfListViewRecipe"
+                Margin="8"
+                AutoFitMode="Height"
+                HeaderTemplate="{StaticResource HeaderView}"
+                HorizontalOptions="FillAndExpand"
+                ItemSpacing="8"
+                ItemTemplate="{StaticResource HorizontalArticleView}"
+                ItemsSource="{Binding LatestStories}"
+                SelectionBackgroundColor="Transparent"
+                TapCommand="{Binding ItemSelectedCommand}"
+                VerticalOptions="FillAndExpand">
+                </listView:SfListView>
 
             </StackLayout>
         </ScrollView>

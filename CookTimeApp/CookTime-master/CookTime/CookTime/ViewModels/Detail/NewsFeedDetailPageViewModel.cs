@@ -64,7 +64,7 @@ namespace CookTime.ViewModels.Detail
             this.recipeIngredients = recet.ingredients;
             this.recipeTags = recet.dietTag;
             this.preparationSteps = recet.steps;
-            this.price = recet.price;
+            this.recipeprice = recet.price;
             this.recipeImage = recet.Photo;
             this.rating = recet.calification;
             this.date = recet.publication;

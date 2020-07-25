@@ -23,7 +23,7 @@
         <ControlTemplate>
             <StackLayout Spacing="0">
                 <!--  Title View  -->
-                <controls:TitleView Title="Brainstorm">
+                <controls:TitleView Title="Recipes">
                     <controls:TitleView.TrailingView>
                         <StackLayout Orientation="Horizontal">
 
