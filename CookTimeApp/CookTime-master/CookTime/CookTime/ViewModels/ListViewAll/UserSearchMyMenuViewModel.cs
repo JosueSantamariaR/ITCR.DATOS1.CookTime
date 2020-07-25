@@ -1,5 +1,4 @@
-﻿using CookTime.ViewModels.Detail;
-using CookTime.ViewModels.News;
+﻿using CookTime.ViewModels.News;
 using CookTime.Views.Detail;
 using CookTime.Views.Forms;
 using Newtonsoft.Json;
@@ -17,42 +16,26 @@ namespace CookTime.ViewModels.Catalog
     /// ViewModel for article list page.
     /// </summary> 
     [Preserve(AllMembers = true)]
-    public class MyMenuSearchRecipePageViewModel : BaseViewModel
+    public class UserSearchMyMenuViewModel : BaseViewModel
     {
         #region Fields
-        
-        private ObservableCollection<Model> latestStories;
+
         INavigation Navigation { get; set; }
+
+        private ObservableCollection<Model> latestStories;
+
         #endregion
 
         #region Constructor
         /// <summary>
         /// Initializes a new instance for the <see cref="UserSearchMyMenuViewModel" /> class.
         /// </summary>
-        public MyMenuSearchRecipePageViewModel(INavigation _navigation)
+        public UserSearchMyMenuViewModel(INavigation _navigation)
         {
-            MyMenuFilterPage filter = new MyMenuFilterPage();
-            var filterselect = filter.getFilter();
-            if (filterselect == "calification")
-            {
-                CallAPIsyncCalification();
-            }else if(filterselect== "publication")
-            {
-                CallAPIsyncPublication();
-            }else if(filterselect== "difficulty")
-            {
-                CallAPIsyncDificulty();
-            }
+
             Navigation = _navigation;
-           
-                
-            
-           
-                
-            
-
-
             this.MenuCommand = new Command(this.MenuClicked);
+
             this.FeatureStoriesCommand = new Command(this.FeatureStoriesClicked);
             this.ItemSelectedCommand = new Command(this.ItemSelected);
         }
@@ -62,8 +45,7 @@ namespace CookTime.ViewModels.Catalog
         /// <summary>
         /// Gets or sets the property that has been bound with the rotator view, which displays the articles featured stories items.
         /// </summary>
-    
-
+      
         /// <summary>
         /// Gets or sets the property that has been bound with the list view, which displays the articles latest stories items.
         /// </summary>
@@ -126,7 +108,7 @@ namespace CookTime.ViewModels.Catalog
         /// Invoked when the bookmark button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
- 
+
 
         /// <summary>
         /// Invoked when the the feature stories item is clicked.
@@ -143,54 +125,18 @@ namespace CookTime.ViewModels.Catalog
         /// <param name="obj">The Object</param>
 
 
-
         private void ItemSelected(object obj)
         {
             var item = obj as Syncfusion.ListView.XForms.ItemTappedEventArgs;
             Navigation.PushAsync(new SearchRecipeDetailPage(item.ItemData as Recet));
         }
 
-        public void CallAPIsyncDificulty()
+        public void CallAPIsync()
         {
-
-             SimpleLoginPage usercito = new SimpleLoginPage();
-             User user = usercito.GetUser();
-             
+            MainSearchPage listr = new MainSearchPage();
+            var x = listr.getRecipe();
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserRadixSort/{user.email}");
-            var recets = client.GetAsync(endopoint).Result;
-            if (recets.IsSuccessStatusCode)
-            {
-                var response = recets.Content.ReadAsStringAsync().Result;
-                var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
-                LatestStories = new ObservableCollection<Recet>(recet);
-
-            }
-        }
-        public void CallAPIsyncCalification()
-        {
-             SimpleLoginPage usercito = new SimpleLoginPage();
-             User user = usercito.GetUser();
-             
-
-            HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserQuickSort/{user.email}");
-            var recets = client.GetAsync(endopoint).Result;
-            if (recets.IsSuccessStatusCode)
-            {
-                var response = recets.Content.ReadAsStringAsync().Result;
-                var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
-                LatestStories = new ObservableCollection<Recet>(recet);
-
-            }
-        }
-        public void CallAPIsyncPublication()
-        {
-             SimpleLoginPage usercito = new SimpleLoginPage();
-             User user = usercito.GetUser();
-             
-            HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserBubbleSort/{user.email}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getRecipeMatch/{x}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
