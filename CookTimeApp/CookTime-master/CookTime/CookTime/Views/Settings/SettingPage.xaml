@@ -61,20 +61,7 @@
                     WidthRequest="245" 
                     Clicked="AddNewEnterprise_Clicked"  />
                 
-                <!--  Change Password button  -->
-                <buttons:SfButton
-                    x:Name="ResetPasswordButton"
-                    Margin="0,10,0,10"
-                    BorderColor="Black"
-                    HorizontalOptions="FillAndExpand"
-                    BorderWidth="1"
-                    FontFamily="{StaticResource Montserrat-SemiBold}"
-                    HeightRequest="40"
-                    Style="{StaticResource RoundButtonStyleSettings}"
-                    Text="Change Password"
-                    Clicked="ResetPasswordButton_Clicked"
-                    TextColor="Black"
-                    WidthRequest="245" />
+
               
 
                 <!--  Logout button  -->
