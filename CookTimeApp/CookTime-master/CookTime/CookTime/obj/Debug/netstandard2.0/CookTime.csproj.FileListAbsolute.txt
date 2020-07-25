@@ -207,3 +207,5 @@ D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\ob
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\MyMenuFilterPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\MyMenuSearchRecipeTemplate.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\SearchProfileDetailPage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\UserSearchMyMenuPage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\UserSearchMyMenuTemplate.xaml.g.cs

@@ -1,6 +1,7 @@
 ﻿using CookTime.ViewModels;
 using CookTime.ViewModels.News;
 using CookTime.ViewModels.Social;
+using CookTime.Views.Catalog;
 using CookTime.Views.Forms;
 using Java.Lang;
 using Newtonsoft.Json;
@@ -39,10 +40,7 @@ namespace CookTime.Views.Social
             userfollowed = user.email;
         }
 
-        private void myMenu_Clicked()
-        {
-
-        }
+       
 
         private void follow_Clicked(object sender, System.EventArgs e)
         {
@@ -114,5 +112,14 @@ namespace CookTime.Views.Social
 
         }
 
+        private async void myMenu_Clicked_1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserSearchMyMenuPage());
+        }
+        public string getUserSearch()
+        {
+            return userfollowed;
+        }
+        
     }
 }

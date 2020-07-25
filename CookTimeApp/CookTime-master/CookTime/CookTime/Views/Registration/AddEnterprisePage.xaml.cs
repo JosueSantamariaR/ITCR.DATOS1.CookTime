@@ -30,7 +30,7 @@ namespace CookTime.Views.Forms
         private async Task<bool> checkEnterprise()
 
         {
-          //  CallAPIsync();
+          CallAPIsync();
             if (String.IsNullOrWhiteSpace(EnterpriseName.Text))
             {
                 await this.DisplayAlert("Advertencia", "El campo del nombre es obligatorio.", "OK");
@@ -54,7 +54,9 @@ namespace CookTime.Views.Forms
             }
              else if (acc == true)
              {
+                await this.DisplayAlert("Comprobación", "Empresa creada con éxito", "OK");
                  return true;
+                
              }
              return false;
             
@@ -70,15 +72,16 @@ namespace CookTime.Views.Forms
                 schedule= Schedule.Text,
                 contact= ContactMethod.Text,
                 direction=Address.Text,
-                logo="LOGO MAMALON"
+                logo="LOGO MAMALON",
+                members= Members.Text
             };
 
             var json = JsonConvert.SerializeObject(enterprise);
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = client.PostAsync($"http://192.168.1.102:8080/cooktime1/api/services/postEnterprise/?name={enterprise.name}&logo={enterprise.logo}.png&contact={enterprise.contact}&schedule={enterprise.schedule}&direction={enterprise.direction}", content).Result;
+            var response = client.PostAsync($"http://192.168.1.102:8080/cooktime1/api/services/postEnterprise/?name={enterprise.name}&logo={enterprise.logo}.png&contact={enterprise.contact}&schedule={enterprise.schedule}&direction={enterprise.direction}&members={enterprise.members}", content).Result;
             if (response.IsSuccessStatusCode)
             {
-                acc = true; ;
+                acc = true; 
             }
             else
             {

@@ -120,15 +120,24 @@ public class UserJson {
         String password = user.getPassword();
         String photo = user.getPhoto();
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
+        String lastSort = user.getLastSort();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
         String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();
-                
-        BubbleSort bubbleSort = new BubbleSort();
         
-        bubbleSort.sort(myMenuList);
+        if (!myMenuList.isEmpty()) {
+            
+            if (lastSort != "BubbleSort") {
 
+                BubbleSort bubbleSort = new BubbleSort();
+
+                bubbleSort.sort(myMenuList);
+
+            }
+            
+        }
+        
         JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
 
         user.setMyMenuList(myMenuList);
@@ -153,18 +162,27 @@ public class UserJson {
         String password = user.getPassword();
         String photo = user.getPhoto();
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
+        String lastSort = user.getLastSort();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
         String followedNames = user.getFollowedNames();
-        boolean chef = user.getChef();   
-                               
-        int minIndex = 0;
-        int maxIndex = myMenuList.size() - 1;
+        boolean chef = user.getChef();    
         
-        QuickSort quickSort = new QuickSort();
-        
-        quickSort.sort(myMenuList, minIndex, maxIndex);
-        
+        if (!myMenuList.isEmpty()) {
+
+            if (lastSort != "QuickSort") {
+
+                int minIndex = 0;
+                int maxIndex = myMenuList.size() - 1;
+
+                QuickSort quickSort = new QuickSort();
+
+                quickSort.sort(myMenuList, minIndex, maxIndex);
+
+            }
+
+        }
+                
         JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
 
         user.setMyMenuList(myMenuList);
@@ -189,21 +207,40 @@ public class UserJson {
         String password = user.getPassword();
         String photo = user.getPhoto();
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
+        String lastSort = user.getLastSort();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
         String followedNames = user.getFollowedNames();
-        boolean chef = user.getChef();        
+        boolean chef = user.getChef();  
+        
+        JSONObject newUserJson = null;
+        
+        if (!myMenuList.isEmpty()) {
 
-        RadixSort radix = new RadixSort();                      
-        
-        int size = myMenuList.size();                   
-        
-        ArrayList<Recipe> newMyMenuList = radix.sort(myMenuList, size);
-        
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, newMyMenuList, followers, followed, followedNames, chef);
-        
-        user.setMyMenuList(newMyMenuList);
-        
+            if (lastSort != "RadixSort") {
+
+                RadixSort radix = new RadixSort();
+
+                int size = myMenuList.size();
+
+                ArrayList<Recipe> newMyMenuList = radix.sort(myMenuList, size);
+
+                newUserJson = createJsonUser(email, name, lastName, age, password, photo, newMyMenuList, followers, followed, followedNames, chef);
+
+                user.setMyMenuList(newMyMenuList);
+
+            } else {
+
+                newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
+
+            }
+
+        } else {
+            
+            newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
+            
+        }
+                
         user.setLastSort("RadixSort");
 
         writeJson(newUserJson, email, false);

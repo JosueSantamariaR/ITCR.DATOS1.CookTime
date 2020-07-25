@@ -141,7 +141,7 @@
 
                     <!--Follow button-->
                     <buttons:SfButton x:Name="myMenu"
-                        
+                        Clicked="myMenu_Clicked_1"
                         Grid.RowSpan="3"
                         Grid.Column="2"
                         VerticalOptions="End"

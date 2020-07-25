@@ -1,6 +1,7 @@
 ﻿using CookTime.ViewModels.News;
 using CookTime.Views.Detail;
 using CookTime.Views.Forms;
+using CookTime.Views.Social;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace CookTime.ViewModels.Catalog
         /// </summary>
         public UserSearchMyMenuViewModel(INavigation _navigation)
         {
-
+            CallAPIsync();
             Navigation = _navigation;
             this.MenuCommand = new Command(this.MenuClicked);
 
@@ -133,10 +134,12 @@ namespace CookTime.ViewModels.Catalog
 
         public void CallAPIsync()
         {
-            MainSearchPage listr = new MainSearchPage();
-            var x = listr.getRecipe();
+            //User user  ;
+            //SearchProfileDetailPage usertemp = new SearchProfileDetailPage(user);
+            
+
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getRecipeMatch/{x}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserMyMenuList/@Santa");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
@@ -146,6 +149,7 @@ namespace CookTime.ViewModels.Catalog
 
             }
         }
+        
 
         #endregion
     }
