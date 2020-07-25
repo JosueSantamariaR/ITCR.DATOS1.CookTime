@@ -242,7 +242,7 @@ public class UserJson {
     /**
      * Method that inserts followed in the json file.
      * @param email String email of the user.
-     * @param follwedName String follwedName of the new followed.
+     * @param follwedEmail String follwedName of the new followed.
      */
     public static void insertFollowed(String email, String follwedEmail) {
 

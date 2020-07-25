@@ -481,7 +481,7 @@ public class AVLTree {
         
         matchesList = matchesAux(matchesList, name, endIndex, this.root);
         
-        ArrayList<Recipe> finalMatchesList = new ArrayList<Recipe>();
+        ArrayList<Recipe> newMatchesList = new ArrayList<Recipe>();
         
         int cont = 0;
         
@@ -491,7 +491,7 @@ public class AVLTree {
             
             if (cont < size) {
                 
-                finalMatchesList.add(matchesList.get(cont));
+                newMatchesList.add(matchesList.get(cont));
                 
             } else {
                 
@@ -502,9 +502,51 @@ public class AVLTree {
             cont ++;
             
         }
+        
+        ArrayList<Integer> indexList = new ArrayList<Integer>();
                 
+        BinaryTree binaryTree = BinaryTree.getInstance();
+                        
+        for (int i = 0; i < newMatchesList.size(); i ++) {
+            
+            String email = newMatchesList.get(i).getEmail();
+
+            User user = binaryTree.getUser(email);
+
+            boolean chef = user.getChef();
+            
+            if (chef == true) {
+                
+                indexList.add(i);
+                                
+            }
+            
+        }
+        
+        ArrayList<Recipe> finalMatchesList = new ArrayList<Recipe>();
+                
+        for (int i = 0; i < indexList.size(); i ++) {
+            
+            finalMatchesList.add(newMatchesList.get(indexList.get(i)));                                                         
+            
+        }
+                
+        for (int i = indexList.size() - 1; i >= 0; i --) {
+            
+            Recipe recipe = newMatchesList.get(indexList.get(i));
+            
+            newMatchesList.remove(recipe);
+                        
+        }
+                                
+        for (int i = 0; i < newMatchesList.size(); i ++) {
+                        
+            finalMatchesList.add(newMatchesList.get(i));   
+            
+        }
+        
         return finalMatchesList;
- 
+         
     }
     
     /**
