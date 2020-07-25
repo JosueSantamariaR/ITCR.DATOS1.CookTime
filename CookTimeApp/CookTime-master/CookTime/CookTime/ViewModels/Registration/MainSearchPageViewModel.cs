@@ -1,6 +1,6 @@
 ﻿namespace CookTime.ViewModels.Catalog
 {
-    internal class AddContactPage
+    internal class MainSearchPageViewModel
     {
     }
 }

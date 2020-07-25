@@ -1,4 +1,5 @@
 ﻿using CookTime.Views.Bookmarks;
+using CookTime.Views.Forms;
 using CookTime.Views.Navigation;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -28,7 +29,7 @@ namespace CookTime.Views.Social
 
         private async void MyMenuButton_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new BookmarksPage());
+            await Navigation.PushAsync(new MyMenuFilterPage());
         }
     }
 }

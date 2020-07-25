@@ -52,6 +52,9 @@
     <Compile Update="Views\Detail\NewsFeedDetailPage.xaml.cs">
       <DependentUpon>NewsFeedDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Registration\MyMenuFilterPage.xaml.cs">
+      <DependentUpon>MyMenuFilterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Registration\MainSearchPage.xaml.cs">
       <DependentUpon>MainSearchPage.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,9 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Detail\SearchRecipeDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Registration\MyMenuFilterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Registration\MainSearchPage.xaml">

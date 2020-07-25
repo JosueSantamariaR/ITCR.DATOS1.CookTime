@@ -70,9 +70,74 @@
                         Style="{StaticResource EntryTextStyle}" />
                     </border:SfBorder>
 
+                    <border:SfBorder
+                        Grid.Row="2"
+                    Padding="6,0,0,0"
+                    BorderColor="{Binding Source={x:Reference CountryPicker}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                    HeightRequest="40"
+                    Style="{StaticResource FormBorderStyle}">
+                        <control:CountryComboBox
+                        Watermark="Filter Type"
+                        x:Name="CountryPicker" 
+                        Style="{StaticResource ComboBoxStyle}">
+                            <combobox:SfComboBox.DropDownButtonSettings>
+                                <combobox:DropDownButtonSettings Width="30" Height="30">
+                                    <combobox:DropDownButtonSettings.View>
+                                        <Label
+                                        Margin="0"
+
+                                        FontFamily="{StaticResource FontIcons}"
+                                        FontSize="25"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{StaticResource DropDownButtonIcon}"
+                                        TextColor="{DynamicResource Gray-600}"
+                                        VerticalTextAlignment="Center" />
+                                    </combobox:DropDownButtonSettings.View>
+                                </combobox:DropDownButtonSettings>
+                            </combobox:SfComboBox.DropDownButtonSettings>
+                        </control:CountryComboBox>
+                    </border:SfBorder>
+
+
+                        <border:SfBorder
+                            Grid.Row="3"
+                        
+                        Padding="6,0,0,0"
+                        BorderColor="{Binding Source={x:Reference StatePicker}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource FormBorderStyle}" HorizontalOptions="CenterAndExpand">
+                            <combobox:SfComboBox
+                            x:Name="StatePicker"
+                            SelectedItem="{Binding State, Source={Reference CountryPicker}}"
+                            DataSource="{Binding States, Source={Reference CountryPicker}}"
+                            Style="{StaticResource ComboBoxStyle}"
+                            HorizontalOptions="CenterAndExpand"
+                            HeightRequest="40"
+                            Watermark="Selection">
+                                <combobox:SfComboBox.DropDownButtonSettings>
+                                    <combobox:DropDownButtonSettings >
+                                        <combobox:DropDownButtonSettings.View>
+                                            <Label
+                                            Margin="0"
+                                            FontFamily="{StaticResource FontIcons}"
+                                            FontSize="25"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{StaticResource DropDownButtonIcon}"
+                                            TextColor="{DynamicResource Gray-600}"
+                                            VerticalTextAlignment="Center" />
+                                        </combobox:DropDownButtonSettings.View>
+                                    </combobox:DropDownButtonSettings>
+                                </combobox:SfComboBox.DropDownButtonSettings>
+                            </combobox:SfComboBox>
+                        </border:SfBorder>
+                   
+
+
+
+
+
 
                     <buttons:SfButton
-                    Grid.Row="2"
+                    Grid.Row="4"
                     HorizontalOptions="Center" 
                         x:Name="searchButton" Clicked="searchButton_Clicked"    
                     Style="{StaticResource SfButtonStyle}"

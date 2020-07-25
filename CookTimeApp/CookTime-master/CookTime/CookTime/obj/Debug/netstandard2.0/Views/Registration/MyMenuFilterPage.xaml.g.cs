@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Registration.MainSearchPage.xaml", "Views/Registration/MainSearchPage.xaml", typeof(global::CookTime.Views.Forms.MainSearchPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Registration.MyMenuFilterPage.xaml", "Views/Registration/MyMenuFilterPage.xaml", typeof(global::CookTime.Views.Forms.MyMenuFilterPage))]
 
 namespace CookTime.Views.Forms {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Registration\\MainSearchPage.xaml")]
-    public partial class MainSearchPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Registration\\MyMenuFilterPage.xaml")]
+    public partial class MyMenuFilterPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.XForms.ComboBox.SfComboBox chooseSearch;
@@ -23,21 +23,13 @@ namespace CookTime.Views.Forms {
         private global::CookTime.Controls.BorderlessEntry search;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::CookTime.Controls.CountryComboBox CountryPicker;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Syncfusion.XForms.ComboBox.SfComboBox StatePicker;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.XForms.Buttons.SfButton searchButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainSearchPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MyMenuFilterPage));
             chooseSearch = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.ComboBox.SfComboBox>(this, "chooseSearch");
             search = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::CookTime.Controls.BorderlessEntry>(this, "search");
-            CountryPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::CookTime.Controls.CountryComboBox>(this, "CountryPicker");
-            StatePicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.ComboBox.SfComboBox>(this, "StatePicker");
             searchButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.Buttons.SfButton>(this, "searchButton");
         }
     }
