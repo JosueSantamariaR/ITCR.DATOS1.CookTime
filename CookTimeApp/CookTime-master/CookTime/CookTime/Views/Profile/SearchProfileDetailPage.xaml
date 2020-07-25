@@ -191,6 +191,7 @@
 
                     <!--Followers count label-->
                     <Label 
+                        x:Name="followerscount"
                         Grid.Row="0"
                         Grid.Column="2"
                         Text="{Binding FollowersCount}"
@@ -211,6 +212,7 @@
 
                     <!--Following count label-->
                     <Label 
+                        x:Name="followingCount"
                         Grid.Row="0"
                         Grid.Column="4"
                         HorizontalOptions="Center"

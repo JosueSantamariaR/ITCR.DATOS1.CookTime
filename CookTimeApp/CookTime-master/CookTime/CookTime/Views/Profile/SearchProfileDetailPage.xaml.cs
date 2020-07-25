@@ -2,7 +2,9 @@
 using CookTime.ViewModels.News;
 using CookTime.ViewModels.Social;
 using CookTime.Views.Forms;
+using Java.Lang;
 using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Text;
 using Xamarin.Forms;
@@ -25,8 +27,13 @@ namespace CookTime.Views.Social
         static string userfollowed;
         static bool accept;
         static bool accept2;
+        static int followers;
+        static int following;
         public SearchProfileDetailPage(User user)
         {
+            CallAPIsyncFollowed();
+            CallAPIsyncFollowing();
+            
             InitializeComponent();
             BindingContext = new SearchUserTappedDetailViewModel(user);
             userfollowed = user.email;
@@ -75,6 +82,35 @@ namespace CookTime.Views.Social
             {
                 accept2 = true;
             }
+
+        }
+        public void CallAPIsyncFollowed()
+        {
+            HttpClient client = new HttpClient();
+                   
+            var response = client.GetAsync($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowed/{userfollowed}").Result;
+            if (response.IsSuccessStatusCode) {
+                var temp = response.Content.ReadAsStringAsync().Result;
+                var temp2= JsonConvert.DeserializeObject<Integer>(temp);
+                following = Convert.ToInt32(temp2);
+            }
+            
+
+        }
+        public void CallAPIsyncFollowing()
+        {
+            HttpClient client = new HttpClient();
+            SimpleLoginPage usercito = new SimpleLoginPage();
+            User userC = usercito.GetUser();
+            var json = JsonConvert.SerializeObject(userC);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = client.GetAsync($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowers/{userfollowed}").Result;
+            if (response.IsSuccessStatusCode) {
+                var temp = response.Content.ReadAsStringAsync().Result;
+                var temp2 = JsonConvert.DeserializeObject<Integer>(temp);
+                followers = Convert.ToInt32(temp2);
+            }
+            
 
         }
 
