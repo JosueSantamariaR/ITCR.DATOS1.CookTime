@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj": {}
+    "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj": {}
   },
   "projects": {
-    "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj": {
+    "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj",
         "projectName": "CookTime.Android",
-        "projectPath": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj",
-        "packagesPath": "C:\\Users\\gabos\\.nuget\\packages\\",
-        "outputPath": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\CookTime.Android.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\gabos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {
-                "projectPath": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj"
+              "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {
+                "projectPath": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj"
               }
             }
           }
@@ -106,21 +106,20 @@
         }
       }
     },
-    "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {
+    "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
         "projectName": "CookTime",
-        "projectPath": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
-        "packagesPath": "C:\\Users\\gabos\\.nuget\\packages\\",
-        "outputPath": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\obj\\",
+        "projectPath": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\gabos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

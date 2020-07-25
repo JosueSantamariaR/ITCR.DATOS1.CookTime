@@ -130,10 +130,10 @@ namespace CookTime.ViewModels.Catalog
         
         public void CallAPIsync()
         {
-            AddContactPage listr = new AddContactPage();
+            MainSearchPage listr = new MainSearchPage();
             var x = listr.getRecipe();
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getRecipeMatch/{x}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.7:8080/cooktime1/api/services/getRecipeMatch/{x}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {

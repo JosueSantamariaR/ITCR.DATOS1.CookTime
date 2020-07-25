@@ -35,7 +35,8 @@ namespace CookTime.ViewModels.Catalog
         public NewsFeedViewModel(INavigation _navigation)
         {
             Navigation = _navigation;
-            CallAPIsyncFollowed();         
+
+            CallAPIsync();
             this.MenuCommand = new Command(this.MenuClicked);
 
             this.ItemSelectedCommand = new Command(this.ItemSelected);
@@ -136,7 +137,7 @@ namespace CookTime.ViewModels.Catalog
         {
             
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/{userFollowSearch.email}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.7:8080/cooktime1/api/services/getUserFollowedName/{userFollowSearch.email}");
             var followed = client.GetAsync(endopoint).Result;
             if (followed.IsSuccessStatusCode)
             {
@@ -149,13 +150,29 @@ namespace CookTime.ViewModels.Catalog
         {
             
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUsersMyMenuList/{usersFollowed}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.7:8080/cooktime1/api/services/getUsersMyMenuList/{usersFollowed}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
                 var response = recets.Content.ReadAsStringAsync().Result;
                 var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
                 LatestStories = new ObservableCollection<Recet>(recet);
+            }
+        }
+
+
+        public void CallAPIsync()
+        {
+
+            HttpClient client = new HttpClient();
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.7:8080/cooktime1/api/services/getAllRecipes/");
+            var recets = client.GetAsync(endopoint).Result;
+            if (recets.IsSuccessStatusCode)
+            {
+                var response = recets.Content.ReadAsStringAsync().Result;
+                var recet2 = JsonConvert.DeserializeObject<List<Recet>>(response);
+                LatestStories = new ObservableCollection<Recet>(recet2);
+
             }
         }
         #endregion

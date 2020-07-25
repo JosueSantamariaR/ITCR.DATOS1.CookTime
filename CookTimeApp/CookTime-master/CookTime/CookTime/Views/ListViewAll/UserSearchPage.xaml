@@ -25,9 +25,6 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ContentPage.BindingContext>
-        <viewModel:UserSearchViewModel />
-    </ContentPage.BindingContext>
 
     
 

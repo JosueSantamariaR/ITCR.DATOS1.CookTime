@@ -25,9 +25,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ContentPage.BindingContext>
-        <viewModel:EnterpriseSearchViewModel />
-    </ContentPage.BindingContext>
+
 
 
 

@@ -12,5 +12,18 @@ namespace CookTime.ViewModels
             public string contact { get; set; }
             public string schedule { get; set; }
             public string direction { get; set; }
+
+        public string Logo
+        {
+            get
+            {
+                return App.BaseImageUrl + this.logo;
+            }
+
+            set
+            {
+                this.logo = value;
+            }
+        }
     }
 }

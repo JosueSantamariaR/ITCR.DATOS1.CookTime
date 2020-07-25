@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms.Internals;
+﻿using CookTime.ViewModels.Catalog;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace CookTime.Views.Catalog
@@ -16,6 +17,7 @@ namespace CookTime.Views.Catalog
         public EnterpriseSearchPage()
         {
             InitializeComponent();
+            BindingContext = new EnterpriseSearchViewModel(Navigation);
         }
     }
 }

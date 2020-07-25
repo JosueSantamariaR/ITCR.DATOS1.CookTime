@@ -37,13 +37,13 @@
     </local2:BusinessRegistrationFormPage>
 
 
-    <local2:AddContactPage Title="Search">
-        <local2:AddContactPage.IconImageSource>
+    <local2:MainSearchPage Title="Search">
+        <local2:MainSearchPage.IconImageSource>
             <FontImageSource FontFamily="{StaticResource FontIcons}"
                                  Glyph="{StaticResource Search}"
                                  Size="16"/>
-        </local2:AddContactPage.IconImageSource>
-    </local2:AddContactPage>
+        </local2:MainSearchPage.IconImageSource>
+    </local2:MainSearchPage>
 
     <local4:SocialProfileWithMessagePage Title="Profile">
         <local4:SocialProfileWithMessagePage.IconImageSource>

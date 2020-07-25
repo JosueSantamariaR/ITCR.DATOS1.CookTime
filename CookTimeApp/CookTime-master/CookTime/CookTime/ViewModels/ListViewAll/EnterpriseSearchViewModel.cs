@@ -1,7 +1,13 @@
-﻿using System.Collections.ObjectModel;
+﻿using CookTime.ViewModels.News;
+using CookTime.Views.Forms;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using Model = CookTime.Models.Article;
+using Model = CookTime.ViewModels.Enterprise;
 
 namespace CookTime.ViewModels.Catalog
 {
@@ -13,7 +19,7 @@ namespace CookTime.ViewModels.Catalog
     {
         #region Fields
 
-        private ObservableCollection<Model> featuredStories;
+        INavigation Navigation { get; set; }
 
         private ObservableCollection<Model> latestStories;
 
@@ -23,48 +29,15 @@ namespace CookTime.ViewModels.Catalog
         /// <summary>
         /// Initializes a new instance for the <see cref="EnterpriseSearchViewModel" /> class.
         /// </summary>
-        public EnterpriseSearchViewModel()
+        public EnterpriseSearchViewModel(INavigation _navigation)
         {
-           
 
-            this.LatestStories = new ObservableCollection<Model>
-            {
-                new Model
-                {
-                    ImagePath = App.BaseImageUrl + "Album1.png",
-                    Name = "Learning to Reset",
-                    Author = "John Doe",
-                    Date = "Apr 16",
-                    AverageReadingTime = "5 mins read"
-                },
-                new Model
-                {
-                    ImagePath = App.BaseImageUrl + "Album2.png",
-                    Name = "Holistic Approach to UI Design",
-                    Author = "John Doe",
-                    Date = "May 26",
-                    AverageReadingTime = "5 mins read"
-                },
-                new Model
-                {
-                    ImagePath = App.BaseImageUrl + "Album3.png",
-                    Name = "Guiding Your Flock to Success",
-                    Author = "John Doe",
-                    Date = "Apr 10",
-                    AverageReadingTime = "5 mins read"
-                },
-                new Model
-                {
-                    ImagePath = App.BaseImageUrl + "Album4.png",
-                    Name = "Holistic Approach to UI Design",
-                    Author = "John Doe",
-                    Date = "Apr 16",
-                    AverageReadingTime = "5 mins read"
-                },
-            };
+
+            Navigation = _navigation;
+            CallAPIsync();
 
             this.MenuCommand = new Command(this.MenuClicked);
-            this.BookmarkCommand = new Command(this.BookmarkButtonClicked);
+         
             this.FeatureStoriesCommand = new Command(this.FeatureStoriesClicked);
             this.ItemSelectedCommand = new Command(this.ItemSelected);
         }
@@ -74,24 +47,7 @@ namespace CookTime.ViewModels.Catalog
         /// <summary>
         /// Gets or sets the property that has been bound with the rotator view, which displays the articles featured stories items.
         /// </summary>
-        public ObservableCollection<Model> FeaturedStories
-        {
-            get
-            {
-                return this.featuredStories;
-            }
-
-            set
-            {
-                if (this.featuredStories == value)
-                {
-                    return;
-                }
-
-                this.featuredStories = value;
-                this.NotifyPropertyChanged();
-            }
-        }
+       
 
         /// <summary>
         /// Gets or sets the property that has been bound with the list view, which displays the articles latest stories items.
@@ -155,13 +111,7 @@ namespace CookTime.ViewModels.Catalog
         /// Invoked when the bookmark button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void BookmarkButtonClicked(object obj)
-        {
-            if (obj is Model article)
-            {
-                article.IsBookmarked = !article.IsBookmarked;
-            }
-        }
+
 
         /// <summary>
         /// Invoked when the the feature stories item is clicked.
@@ -179,6 +129,21 @@ namespace CookTime.ViewModels.Catalog
         private void ItemSelected(object obj)
         {
             // Do something
+        }
+        public void CallAPIsync()
+        {
+            MainSearchPage listr = new MainSearchPage();
+            var x = listr.getRecipe();
+            HttpClient client = new HttpClient();
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.7:8080/cooktime1/api/services/getEnterpriseMatch/{x}");
+            var recets = client.GetAsync(endopoint).Result;
+            if (recets.IsSuccessStatusCode)
+            {
+                var response = recets.Content.ReadAsStringAsync().Result;
+                var enterpriseResponse = JsonConvert.DeserializeObject<List<Enterprise>>(response);
+                LatestStories = new ObservableCollection<Enterprise>(enterpriseResponse);
+
+            }
         }
 
         #endregion
