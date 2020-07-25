@@ -1,4 +1,5 @@
 ﻿using CookTime.Views.Forms;
+using CookTime.Views.Social;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -126,7 +127,8 @@ namespace CookTime.ViewModels.Catalog
         /// <param name="obj">The Object</param>
         private void ItemSelected(object obj)
         {
-            // Do something
+            var item = obj as Syncfusion.ListView.XForms.ItemTappedEventArgs;
+            Navigation.PushAsync(new SearchProfileDetailPage(item.ItemData as User));
         }
         public void CallAPIsync()
         {

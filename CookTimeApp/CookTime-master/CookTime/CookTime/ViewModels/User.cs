@@ -44,6 +44,20 @@ namespace CookTime.ViewModels
             }
         }
 
+
+        public string Photo
+        {
+            get
+            {
+                return App.BaseImageUrl + this.photo;
+            }
+
+            set
+            {
+                this.photo = value;
+            }
+        }
+
     }
 
     }

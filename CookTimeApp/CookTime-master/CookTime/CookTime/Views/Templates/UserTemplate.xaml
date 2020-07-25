@@ -92,31 +92,7 @@
             </Label.FormattedText>
         </Label>
 
-        <!--  Bookmark button  -->
-        <buttons:SfButton
-            Grid.Row="0"
-            Grid.Column="2"
-            Margin="0"
-            Padding="0"
-            CommandParameter="{Binding .}"
-            CornerRadius="4"
-            HeightRequest="32"
-            HorizontalOptions="End"
-            Style="{StaticResource BookmarkIconStyle}"
-            Text="{Binding IsBookmarked, Converter={StaticResource boolToStringConverter}, ConverterParameter=0}"
-            VerticalOptions="Start"
-            WidthRequest="32">
-            <buttons:SfButton.Behaviors>
-                <behaviors:ItemTemplateButtonBehavior
-                    ChildElement="{Binding Path=ChildElement, Source={x:Reference userTemplate}}"
-                    Command="{Binding ParentBindingContext.BookmarkCommand, Source={x:Reference userTemplate}}"
-                    ParentElement="{Binding Path=ParentElement, Source={x:Reference userTemplate}}" />
-            </buttons:SfButton.Behaviors>
-        </buttons:SfButton>
 
-        <Grid.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding ParentBindingContext.ItemSelectedCommand, Source={x:Reference userTemplate}}" CommandParameter="{Binding .}" />
-        </Grid.GestureRecognizers>
 
     </Grid>
 </Grid>

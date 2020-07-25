@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Profile.Templates.ProfileTemplate.xaml", "Views/Profile/Templates/ProfileTemplate.xaml", typeof(global::CookTime.Views.Social.Templates.ProfileSettingsTemplate))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Social.Templates.SearchProfileDetailTemplate.xaml", "Views/Social/Templates/SearchProfileDetailTemplate.xaml", typeof(global::CookTime.Views.Social.Templates.ProfileTemplate))]
 
 namespace CookTime.Views.Social.Templates {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Profile\\Templates\\ProfileTemplate.xaml")]
-    public partial class ProfileSettingsTemplate : global::Xamarin.Forms.ViewCell {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Social\\Templates\\SearchProfileDetailTemplate.xaml")]
+    public partial class ProfileTemplate : global::Xamarin.Forms.ViewCell {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ProfileSettingsTemplate));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ProfileTemplate));
         }
     }
 }
