@@ -134,6 +134,7 @@
                         Grid.Column="1"
                         VerticalOptions="End"
                         Margin="24,0,0,0"
+                        Clicked="follow_Clicked"
                         Style="{StaticResource SfGradientButtonStyle}"
                         Text="FOLLOW" />
 

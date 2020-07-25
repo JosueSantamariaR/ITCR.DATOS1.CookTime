@@ -78,11 +78,7 @@ namespace CookTime.Views.Forms
                 search1 = search.Text;
                 await Navigation.PushAsync(new EnterpriseSearchPage());
             }
-           /*if (x == "si")
-            {
-                this.DisplayAlert("ATENCION", "MAE ESTAMOS EN LA FAMA", "OK");
-            }
-            else  { this.DisplayAlert("ATENCION", "MAE ESTAMOS Mamandooooo", "OK"); }*/
+           
         }
         public string getRecipe()
         {
