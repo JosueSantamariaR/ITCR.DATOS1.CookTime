@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CookTime.Views.Catalog.UserSearchMyMenuPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+    xmlns:controls="clr-namespace:CookTime.Controls"
+    xmlns:converter="clr-namespace:CookTime.Converters"
+    xmlns:helper="clr-namespace:CookTime.Helpers"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
+    xmlns:template="clr-namespace:CookTime.Views.Templates"
+    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Catalog" xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    x:Name="articleList"
+    BackgroundColor="{DynamicResource Gray-White}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converter:BooleanToStringConverter x:Key="BoolToStringConverter" />
+
+
+            <DataTemplate x:Key="HorizontalArticleView">
+                <template:UserSearchMyMenuTemplate ParentBindingContext="{Binding Path=BindingContext, Source={x:Reference articleList}}" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="HeaderView">
+                <StackLayout Spacing="5">
+
+
+
+                    <!--  Label for Latest stories  -->
+                    <Label
+                        Margin="0,16,0,0"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="16"
+                        HorizontalOptions="Start"
+                        Text="Recipes"
+                        
+                        TextColor="{DynamicResource Gray-800}" />
+                </StackLayout>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="16" Spacing="16">
+
+
+                <listView:SfListView
+                x:Name="SfListViewMyMenu"
+                Margin="8"
+                AutoFitMode="Height"
+                HeaderTemplate="{StaticResource HeaderView}"
+                HorizontalOptions="FillAndExpand"
+                ItemSpacing="8"
+                ItemTemplate="{StaticResource HorizontalArticleView}"
+                ItemsSource="{Binding LatestStories}"
+                SelectionBackgroundColor="Transparent"
+                TapCommand="{Binding ItemSelectedCommand}"
+                VerticalOptions="FillAndExpand">
+                </listView:SfListView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

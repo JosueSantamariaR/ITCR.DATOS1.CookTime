@@ -104,6 +104,28 @@
                         Style="{StaticResource EntryTextStyle}" />
                 </border:SfBorder>
 
+
+                <!-- Members -->
+                <Label
+                    FontFamily="{StaticResource Montserrat-Medium}"
+                    Margin="0,0,0,4"
+                    HeightRequest="18" 
+                    FontSize="12"
+                    Text="Enterprise Members"
+                    TextColor="{DynamicResource Gray-800}" />
+
+                <!-- Members entry  -->
+                <border:SfBorder
+                    Grid.Column="3"
+                    BorderColor="{Binding Source={x:Reference Schedule}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                    Style="{StaticResource FormBorderStyle}">
+                    <control:BorderlessEntry
+                        x:Name="Members"
+                        Placeholder="Enter the email members"
+                        Style="{StaticResource EntryTextStyle}" />
+                </border:SfBorder>
+
+
                 <!--  Add enterprise button-->
                 <buttons:SfButton
                     x:Name="AddEnterprise"

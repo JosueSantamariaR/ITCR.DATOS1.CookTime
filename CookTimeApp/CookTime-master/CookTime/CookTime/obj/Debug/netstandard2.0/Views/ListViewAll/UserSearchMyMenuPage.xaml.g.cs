@@ -8,25 +8,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.ListViewAll.MyMenuSearchRecipePage.xaml", "Views/ListViewAll/MyMenuSearchRecipePage.xaml", typeof(global::CookTime.Views.Catalog.MyMenuSearchRecipePage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.ListViewAll.UserSearchMyMenuPage.xaml", "Views/ListViewAll/UserSearchMyMenuPage.xaml", typeof(global::CookTime.Views.Catalog.UserSearchMyMenuPage))]
 
 namespace CookTime.Views.Catalog {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListViewAll\\MyMenuSearchRecipePage.xaml")]
-    public partial class MyMenuSearchRecipePage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListViewAll\\UserSearchMyMenuPage.xaml")]
+    public partial class UserSearchMyMenuPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ContentPage articleList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Syncfusion.ListView.XForms.SfListView SfListViewMyMenuRecipe;
+        private global::Syncfusion.ListView.XForms.SfListView SfListViewMyMenu;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MyMenuSearchRecipePage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(UserSearchMyMenuPage));
             articleList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "articleList");
-            SfListViewMyMenuRecipe = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.ListView.XForms.SfListView>(this, "SfListViewMyMenuRecipe");
+            SfListViewMyMenu = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.ListView.XForms.SfListView>(this, "SfListViewMyMenu");
         }
     }
 }

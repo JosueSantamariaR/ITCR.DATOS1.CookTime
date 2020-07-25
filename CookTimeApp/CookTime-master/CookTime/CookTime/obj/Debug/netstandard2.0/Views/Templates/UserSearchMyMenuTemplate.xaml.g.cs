@@ -8,20 +8,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Templates.MyMenuSearchRecipeTemplate.xaml", "Views/Templates/MyMenuSearchRecipeTemplate.xaml", typeof(global::CookTime.Views.Templates.MyMenuSearchRecipeTemplate))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Templates.UserSearchMyMenuTemplate.xaml", "Views/Templates/UserSearchMyMenuTemplate.xaml", typeof(global::CookTime.Views.Templates.UserSearchMyMenuTemplate))]
 
 namespace CookTime.Views.Templates {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Templates\\MyMenuSearchRecipeTemplate.xaml")]
-    public partial class MyMenuSearchRecipeTemplate : global::Xamarin.Forms.Grid {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Templates\\UserSearchMyMenuTemplate.xaml")]
+    public partial class UserSearchMyMenuTemplate : global::Xamarin.Forms.Grid {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Grid articleListTemplate;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MyMenuSearchRecipeTemplate));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(UserSearchMyMenuTemplate));
             articleListTemplate = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "articleListTemplate");
         }
     }
