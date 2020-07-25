@@ -52,15 +52,15 @@ namespace CookTime.Views.Forms
                 await this.DisplayAlert("Advertencia", "El campo de la direción es obligatorio.", "OK");
                 return false;
             }
-            /* else if (acc == true)
+             else if (acc == true)
              {
                  return true;
              }
-             return false;*/
-            return true;
+             return false;
+            
 
-        }/*
-        bool acc;
+        }
+        static bool acc;
         public void CallAPIsync()
         {
             HttpClient client = new HttpClient();
@@ -84,7 +84,7 @@ namespace CookTime.Views.Forms
             {
                 acc = false;
             }
-        }*/
+        }
 
         public void clearEnterprise()
         {

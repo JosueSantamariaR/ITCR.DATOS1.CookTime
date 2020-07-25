@@ -135,11 +135,11 @@ namespace CookTime.ViewModels.Catalog
         {
 
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/@Nacho");
-            var recets = client.GetAsync(endopoint).Result;
-            if (recets.IsSuccessStatusCode)
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/{userSearchFollow.GetUser()}");
+            var followed = client.GetAsync(endopoint).Result;
+            if (followed.IsSuccessStatusCode)
             {
-                usersFollowed= recets.Content.ReadAsStringAsync().Result;
+                usersFollowed= followed.Content.ReadAsStringAsync().Result;
                 CallAPIsyncFollowedRecipes();
 
             }

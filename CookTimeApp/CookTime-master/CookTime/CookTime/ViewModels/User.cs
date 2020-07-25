@@ -13,8 +13,9 @@ namespace CookTime.ViewModels
             public string lastName { get; set; }
             public string name { get; set; }
             public string password { get; set; }
-            public string photo { get; set; }
-        }
+            public string photo { get; set; }  
+            
+    }
 
     }
 

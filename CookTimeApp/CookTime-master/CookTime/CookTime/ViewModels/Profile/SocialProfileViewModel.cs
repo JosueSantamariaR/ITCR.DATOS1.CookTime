@@ -1,6 +1,8 @@
 ﻿using CookTime.Views.Forms;
 using Syncfusion.XForms.Buttons;
+using System;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -35,10 +37,15 @@ namespace CookTime.ViewModels.Social
         /// <summary>
         /// Initializes a new instance for the <see cref="SocialProfileViewModel" /> class.
         /// </summary>
+        /// 
+        static int followers = 0;
+        static int following = 0;
+        static SimpleLoginPage usercito = new SimpleLoginPage();
+        static User user = usercito.GetUser();
         public SocialProfileViewModel()
         {
-            SimpleLoginPage usercito = new SimpleLoginPage();
-            User user = usercito.GetUser();
+            //CallAPIsyncFollowers();
+            //CallAPIsyncFollowing();
             this.HeaderImagePath = "Album2.png";
             this.ProfileImage = "ProfileImage3.png";
             this.BackgroundImage = "Sky-Image.png";
@@ -48,8 +55,8 @@ namespace CookTime.ViewModels.Social
             this.Country = "Edad: "+user.age;
             this.About = "Only a lover of the culinary world, with simple tastes and a great love for barbecues.";
             this.PostsCount = 8;
-            this.FollowersCount = 45;
-            this.FollowingCount = 45;
+            this.FollowersCount = followers;
+            this.FollowingCount = following;
 
             this.Pictures = new ObservableCollection<ProfileModel>()
             {
@@ -256,6 +263,31 @@ namespace CookTime.ViewModels.Social
         {
             // Do something
         }
+        /*
+        public void CallAPIsyncFollowers()
+        {
+
+            HttpClient client = new HttpClient();
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/{user.email}");
+            var followed = client.GetAsync(endopoint).Result;
+            if (followed.IsSuccessStatusCode)
+            {
+                var followersString = followed.Content.ReadAsStringAsync().Result;
+                followers = Convert.ToInt32(followersString);
+            }
+        }
+        public void CallAPIsyncFollowing()
+        {
+            HttpClient client = new HttpClient();
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/{user.email}");
+            var followed = client.GetAsync(endopoint).Result;
+            if (followed.IsSuccessStatusCode)
+            {
+                var followingString = followed.Content.ReadAsStringAsync().Result;
+                following = Convert.ToInt32(followingString);
+
+            }
+        }*/
 
         #endregion
     }
