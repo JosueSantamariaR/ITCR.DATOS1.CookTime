@@ -132,6 +132,15 @@ public class Services {
         return Response.ok(binaryTree.matches(name, size)).build();                              
                             
     }
+        
+    @GET
+    @Path("/getUserFollowedName/{email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getUserFollowedName(@PathParam("email") String email) throws JSONException, IOException {
+                
+        return Response.ok(binaryTree.getUser(email).getFollowedNames()).build();                              
+                            
+    }       
     
     /**
      * Method that posts a user in the tree.
@@ -330,19 +339,22 @@ public class Services {
     /**
      * Method that posts followeed in the tree.
      * @param email String email of the user.
+     * @param follwedEmail String follwedEmail of the followed.
      * @return Response.
      * @throws org.codehaus.jettison.json.JSONException
      * @throws java.io.IOException
      * @throws org.json.simple.parser.ParseException
      */
     @POST
-    @Path("/postUserFollowed/{email}")
+    @Path("/postUserFollowed/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response postUserFollowed(@PathParam("email") String email) throws JSONException, IOException, ParseException {
+    public Response postUserFollowed(@QueryParam("email") String email,
+                                     @QueryParam("follwedEmail") String follwedEmail)
+                                     throws JSONException, IOException, ParseException {
                                
         if (binaryTree.contains(email)) {
 
-            UserJson.insertFollowed(email);
+            UserJson.insertFollowed(email, follwedEmail);
             
             return Response.status(Response.Status.CREATED).entity(binaryTree.getUser(email).getFollowed()).build();                          
                                               

@@ -17,6 +17,7 @@ public class User {
     private String lastSort = "BubbleSort";
     private int followers = 0;
     private int followed = 0;
+    private String followedNames = "";
     private boolean chef;
         
     /**
@@ -216,5 +217,17 @@ public class User {
         this.chef = chef;
         
     }
+
+    public String getFollowedNames() {
+        
+        return followedNames;
+        
+    }
+
+    public void setFollowedNames(String followedNames) {
+        
+        this.followedNames = followedNames;
+        
+    }       
         
 }

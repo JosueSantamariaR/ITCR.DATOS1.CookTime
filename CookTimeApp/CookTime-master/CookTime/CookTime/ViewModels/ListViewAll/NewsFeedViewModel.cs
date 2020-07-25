@@ -1,5 +1,6 @@
 ﻿using CookTime.ViewModels.News;
 using CookTime.Views.Detail;
+using CookTime.Views.Forms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -126,22 +127,40 @@ namespace CookTime.ViewModels.Catalog
             var item = obj as Syncfusion.ListView.XForms.ItemTappedEventArgs;
             Navigation.PushAsync(new ArticleDetailPage(item.ItemData as Recet));
         }
-        
+
+
+        SimpleLoginPage userSearchFollow = new SimpleLoginPage();
+        static string usersFollowed;
         public void CallAPIsync()
         {
+            User userlink = userSearchFollow.GetUser();
+            
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri("http://192.168.1.102:8080/cooktime1/api/services/getAllRecipes/");
+            var endopoint = client.BaseAddress = new Uri($"http://localhost:8080/cooktime1/api/services/getUsersFollowed/{userlink.email}");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
+                 usersFollowed = recets.Content.ReadAsStringAsync().Result;
+                //var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
+                //LatestStories = new ObservableCollection<Recet>(recet);
+            }
+        }
+        public void CallAPIsyncUser()
+        {         
                 
-                var response = recets.Content.ReadAsStringAsync().Result;
-                var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
-                
-                LatestStories = new ObservableCollection<Recet>(recet);
+                HttpClient client = new HttpClient();
+                var endopoint = client.BaseAddress = new Uri($"http://localhost:8080/cooktime1/api/services/getUsersMyMenuList/{usersFollowed}");
+                var recets = client.GetAsync(endopoint).Result;
+                if (recets.IsSuccessStatusCode)
+                {
 
+                    var response = recets.Content.ReadAsStringAsync().Result;
+                    var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
+
+                    LatestStories = new ObservableCollection<Recet>(recet);
+
+                }
             }
         }
         #endregion
     }
-}

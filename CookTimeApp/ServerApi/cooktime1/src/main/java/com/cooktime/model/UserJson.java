@@ -16,7 +16,7 @@ public class UserJson {
     
     private static final BinaryTree binaryTree = BinaryTree.getInstance();
     private static final AVLTree avlTree = AVLTree.getInstance();
-    private static final String directionJson = "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\ServerApi\\cooktime1\\users.json";
+    private static final String directionJson = "C:\\Users\\ExtremeTech\\Documents\\NetBeansProjects\\CookTime-RestApi\\cooktime1\\users.json";
     
     /**
      * Constructor of this class.
@@ -38,8 +38,9 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = new ArrayList<Recipe>();
         int followers = 0;
         int followed = 0;
+        String followedNames = "";
         
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo,myMenuList, followers, followed, chef);
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo,myMenuList, followers, followed, followedNames, chef);
                 
         writeJson(newUserJson, email, true);
         
@@ -61,8 +62,9 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
+        String followedNames = user.getFollowedNames();
                                 
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, true);
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, true);
         
         user.setChef(true);
 
@@ -87,11 +89,12 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
+        String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();
         
         myMenuList.add(avlTree.getRecipe(newRecipe));
         
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, chef);
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
 
         user.setMyMenuList(myMenuList);
 
@@ -115,13 +118,14 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
+        String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();
                 
         BubbleSort bubbleSort = new BubbleSort();
         
         bubbleSort.sort(myMenuList);
 
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, chef);
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
 
         user.setMyMenuList(myMenuList);
         
@@ -147,6 +151,7 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
+        String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();   
                                
         int minIndex = 0;
@@ -156,7 +161,7 @@ public class UserJson {
         
         quickSort.sort(myMenuList, minIndex, maxIndex);
         
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, chef);
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
 
         user.setMyMenuList(myMenuList);
         
@@ -182,6 +187,7 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
+        String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();        
 
         RadixSort radix = new RadixSort();                      
@@ -190,7 +196,7 @@ public class UserJson {
         
         ArrayList<Recipe> newMyMenuList = radix.sort(myMenuList, size);
         
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, newMyMenuList, followers, followed, chef);
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, newMyMenuList, followers, followed, followedNames, chef);
         
         user.setMyMenuList(newMyMenuList);
         
@@ -216,11 +222,12 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
+        String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();
                 
         followers ++;
                         
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, chef);
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
 
         user.setFollowers(followers);
 
@@ -231,8 +238,9 @@ public class UserJson {
     /**
      * Method that inserts followed in the json file.
      * @param email String email of the user.
+     * @param follwedName String follwedName of the new followed.
      */
-    public static void insertFollowed(String email) {
+    public static void insertFollowed(String email, String follwedEmail) {
 
         User user = binaryTree.getUser(email);
 
@@ -244,13 +252,26 @@ public class UserJson {
         ArrayList<Recipe> myMenuList = user.getMyMenuList();
         int followers = user.getFollowers();
         int followed = user.getFollowed();
+        String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();
                 
         followed ++;
-                        
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, chef);
+        
+        if (followedNames == "") {
+            
+            followedNames += follwedEmail;
+            
+        } else {
+            
+            followedNames += "," + follwedEmail;
+            
+        }
+                                        
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
 
         user.setFollowed(followed);
+        
+        user.setFollowedNames(followedNames);
 
         writeJson(newUserJson, email, false);
 
@@ -261,9 +282,9 @@ public class UserJson {
      * @param array ArrayList array of users.
      * @return ArrayList.
      */
-    public static ArrayList<ArrayList<Recipe>> getUsersMyMenuList(ArrayList<String> array) {
+    public static ArrayList<Recipe> getUsersMyMenuList(ArrayList<String> array) {
         
-        ArrayList<ArrayList<Recipe>> finalArray = new ArrayList<ArrayList<Recipe>>();
+        ArrayList<Recipe> finalArray = new ArrayList<Recipe>();
         
         for (int i = 0; i < array.size(); i ++) {
             
@@ -271,8 +292,12 @@ public class UserJson {
             
             ArrayList<Recipe> myMenuList = user.getMyMenuList();
             
-            finalArray.add(myMenuList);
-            
+            for (int j = 0; j < myMenuList.size(); j ++) {
+                
+                finalArray.add(myMenuList.get(j));
+                
+            }
+                        
         }
         
         return finalArray;
@@ -294,7 +319,8 @@ public class UserJson {
      * @return JSONObject
      */
     private static JSONObject createJsonUser(String email, String name, String lastName, int age, String password, String photo,
-                                             ArrayList<Recipe> myMenuList, int followers, int followed, boolean chef) {
+                                             ArrayList<Recipe> myMenuList, int followers, int followed, String followedNames,
+                                             boolean chef) {
         
         JSONObject userJson = new JSONObject();
 
@@ -307,6 +333,7 @@ public class UserJson {
         userJson.put("myMenuList", myMenuList);
         userJson.put("followers", followers);
         userJson.put("followed", followed);
+        userJson.put("followedNames", followedNames);
         userJson.put("chef", chef);
         
         return userJson;

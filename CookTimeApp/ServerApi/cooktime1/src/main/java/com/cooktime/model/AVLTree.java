@@ -253,23 +253,23 @@ public class AVLTree {
      * @param recipe Recipe recipe to insert.
      * @param node NodeAVLTree root of the tree.
      */
-    private NodeAVLTree insertAux(Recipe recipe, NodeAVLTree node) {  
+    private NodeAVLTree insertAux(Recipe newRecipe, NodeAVLTree node) {  
         
         if (node == null) {
             
-            return new NodeAVLTree(recipe);  
+            return new NodeAVLTree(newRecipe);  
             
         }
         
-        int compareResult = recipe.getName().compareTo(node.getRecipe().getName());
+        int compareResult = newRecipe.getName().compareTo(node.getRecipe().getName());
         
         if (compareResult < 0) {
 
-            node.setLeft(this.insertAux(recipe, node.getLeft()));
+            node.setLeft(this.insertAux(newRecipe, node.getLeft()));
 
         } else if (compareResult > 0) {
 
-            node.setRight(this.insertAux(recipe, node.getRight()));
+            node.setRight(this.insertAux(newRecipe, node.getRight()));
             
         } else {
             
@@ -283,7 +283,7 @@ public class AVLTree {
         
         if (balance > 1) {
             
-            int compare1 = recipe.getName().compareTo(node.getLeft().getRecipe().getName());
+            int compare1 = newRecipe.getName().compareTo(node.getLeft().getRecipe().getName());
             
             if (compare1 < 0)  {
             
@@ -301,7 +301,7 @@ public class AVLTree {
                         
         } else if (balance < -1) {
             
-            int compare = recipe.getName().compareTo(node.getRight().getRecipe().getName());
+            int compare = newRecipe.getName().compareTo(node.getRight().getRecipe().getName());
         
          
             if (compare < 0) {  

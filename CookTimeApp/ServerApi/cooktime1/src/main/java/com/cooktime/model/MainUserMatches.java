@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class MainUserMatches {
     
-    /*
+    
     
     public static void main() {
         
         
-        BinaryTree binaryTree = new BinaryTree();
+        BinaryTree binaryTree = BinaryTree.getInstance();
         
         binaryTree.insert("@IgnacioA", "IgnacioA", "Granados", 20, "abc", "photo.png", true);
         binaryTree.insert("@IgnacioB", "IgnacioB", "Granados", 20, "abc", "photo.png", true);
@@ -28,12 +28,18 @@ public class MainUserMatches {
         binaryTree.insert("@Ignacio—", "Ignacio—", "Granados", 20, "abc", "photo.png", true);
         binaryTree.insert("@IgnacioO", "IgnacioO", "Granados", 20, "abc", "photo.png", true);
         binaryTree.insert("@IgnacioP", "IgnacioP", "Granados", 20, "abc", "photo.png", true);
+        
+        UserJson.insertFollowed("@IgnacioA", "@Nacho");
+        UserJson.insertFollowed("@IgnacioA", "@Santa");
+        UserJson.insertFollowed("@IgnacioA", "@Akion");
+        
+        //System.out.println(binaryTree.getUser("@IgnacioA").getFollowedNames());
                         
-        ArrayList<User> newList = new ArrayList<User>();
+        //ArrayList<User> newList = new ArrayList<User>();
+               
+        //newList = binaryTree.matches("Ignacio", 7);
         
-        newList = binaryTree.matches("Ignacio", 7);
-        
-        print(newList);
+        //print(newList);
         
     }
     
@@ -53,7 +59,7 @@ public class MainUserMatches {
     
     
     
-    */
+    
     
     
     

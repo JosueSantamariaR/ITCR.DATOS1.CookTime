@@ -16,7 +16,7 @@ public class EnterpriseJson {
     
     private static final SplayTree splayTree = SplayTree.getInstance();
     private static final AVLTree avlTree = AVLTree.getInstance();
-    private static final String directionJson = "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\ServerApi\\cooktime1\\enterprises.json";
+    private static final String directionJson = "C:\\Users\\ExtremeTech\\Documents\\NetBeansProjects\\CookTime-RestApi\\cooktime1\\enterprises.json";
     
     /**
      * Method that inserts enterpises in the json file.
