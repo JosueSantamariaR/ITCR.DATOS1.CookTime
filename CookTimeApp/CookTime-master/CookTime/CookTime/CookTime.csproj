@@ -46,6 +46,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\ListViewAll\MyMenuSearchRecipePage.xaml.cs">
+      <DependentUpon>MyMenuSearchRecipePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Detail\SearchRecipeDetailPage.xaml.cs">
       <DependentUpon>SearchRecipeDetailPage.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,9 @@
     <Compile Update="Views\Profile\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Templates\MyMenuSearchRecipeTemplate.xaml.cs">
+      <DependentUpon>MyMenuSearchRecipeTemplate.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -76,10 +82,7 @@
     <EmbeddedResource Update="Views\Bookmarks\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Catalog\ArticleListPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Catalog\Styles.xaml">
+    <EmbeddedResource Update="Views\ListViewAll\MyMenuSearchRecipePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Detail\SearchRecipeDetailPage.xaml">
@@ -137,6 +140,9 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Settings\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\MyMenuSearchRecipeTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\Styles.xaml">

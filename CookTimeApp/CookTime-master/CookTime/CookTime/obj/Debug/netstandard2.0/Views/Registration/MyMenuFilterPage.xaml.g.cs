@@ -20,16 +20,12 @@ namespace CookTime.Views.Forms {
         private global::Syncfusion.XForms.ComboBox.SfComboBox chooseSearch;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::CookTime.Controls.BorderlessEntry search;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.XForms.Buttons.SfButton searchButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MyMenuFilterPage));
             chooseSearch = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.ComboBox.SfComboBox>(this, "chooseSearch");
-            search = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::CookTime.Controls.BorderlessEntry>(this, "search");
             searchButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.Buttons.SfButton>(this, "searchButton");
         }
     }

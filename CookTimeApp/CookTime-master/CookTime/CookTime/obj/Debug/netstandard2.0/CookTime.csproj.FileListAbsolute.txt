@@ -199,3 +199,5 @@ C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-mas
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\CookTime.csprojAssemblyReference.cache
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\SearchRecipeDetailPage.xaml.g.cs
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\MyMenuFilterPage.xaml.g.cs
+C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\MyMenuSearchRecipePage.xaml.g.cs
+C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\MyMenuSearchRecipeTemplate.xaml.g.cs

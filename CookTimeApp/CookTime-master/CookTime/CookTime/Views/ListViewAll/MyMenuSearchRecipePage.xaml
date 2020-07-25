@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="CookTime.Views.Catalog.RecipeSearchPage"
+    x:Class="CookTime.Views.Catalog.MyMenuSearchRecipePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
@@ -10,10 +10,11 @@
     xmlns:helper="clr-namespace:CookTime.Helpers"
     xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
     xmlns:template="clr-namespace:CookTime.Views.Templates"
-    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Catalog" xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:viewModel="clr-namespace:CookTime.ViewModels.Catalog" xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     x:Name="articleList"
     BackgroundColor="{DynamicResource Gray-White}"
     NavigationPage.HasNavigationBar="False">
+
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -38,7 +39,7 @@
                         FontFamily="{StaticResource Montserrat-SemiBold}"
                         FontSize="16"
                         HorizontalOptions="Start"
-                        Text="Recipes"
+                        Text="Recipe"
                         
                         TextColor="{DynamicResource Gray-800}" />
                 </StackLayout>
@@ -54,7 +55,7 @@
 
 
                 <listView:SfListView
-                x:Name="SfListViewRecipe"
+                x:Name="SfListViewMyMenuRecipe"
                 Margin="8"
                 AutoFitMode="Height"
                 HeaderTemplate="{StaticResource HeaderView}"
@@ -66,6 +67,7 @@
                 TapCommand="{Binding ItemSelectedCommand}"
                 VerticalOptions="FillAndExpand">
                 </listView:SfListView>
+
 
             </StackLayout>
         </ScrollView>

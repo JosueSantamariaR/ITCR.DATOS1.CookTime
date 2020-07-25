@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    x:Class="CookTime.Views.Templates.MyMenuSearchRecipeTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:CookTime.Behaviors"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:converter="clr-namespace:CookTime.Converters"
+    x:Name="articleListTemplate">
+
+    <Grid.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converter:BooleanToStringConverter x:Key="boolToStringConverter" />
+        </ResourceDictionary>
+    </Grid.Resources>
+
+    <Grid
+        ColumnSpacing="16"
+        HeightRequest="110"
+        RowSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition>
+                <ColumnDefinition.Width>
+                    <OnPlatform Default="*" UWP="Auto" />
+                </ColumnDefinition.Width>
+            </ColumnDefinition>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Blog image  -->
+        <Image
+            Grid.RowSpan="3"
+            Aspect="Fill"
+            BackgroundColor="{DynamicResource Gray-200}"
+            HeightRequest="110"
+            Source="{Binding Photo}"
+            VerticalOptions="Center"
+            WidthRequest="120" />
+
+        <!--  Blog title  -->
+        <Label
+            Grid.Column="1"
+            Margin="0,8,0,0"
+            FontFamily="{StaticResource Montserrat-SemiBold}"
+            FontSize="14"
+            LineBreakMode="TailTruncation"
+            LineHeight="{OnPlatform Default=-1,
+                                    Android=1.25,
+                                    iOS=1.25}"
+            MaxLines="2"
+            Text="{Binding name}"
+            TextColor="{DynamicResource Gray-900}" />
+
+        <!--  Author name  -->
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,8,0,0"
+            FontFamily="{StaticResource Montserrat-Medium}"
+            FontSize="12"
+            LineHeight="{OnPlatform Default=-1,
+                                    Android=1.5}"
+            Text="{Binding author}"
+            TextColor="{DynamicResource Gray-900}" />
+
+        <!--  Published date and Average reading time  -->
+        <Label
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="0,2,0,8"
+            FontFamily="{StaticResource Montserrat-Regular}"
+            FontSize="12"
+            LineHeight="{OnPlatform Default=-1,
+                                    Android=1.5}"
+            TextColor="{DynamicResource Gray-700}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="{Binding publication}" />
+                    <Span Text=" | " />
+                    <Span Text="{Binding time}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+    </Grid>
+</Grid>

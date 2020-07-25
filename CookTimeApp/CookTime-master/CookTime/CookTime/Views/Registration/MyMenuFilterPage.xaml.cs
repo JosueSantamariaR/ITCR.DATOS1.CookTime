@@ -23,7 +23,7 @@ namespace CookTime.Views.Forms
             }
             else
             {
-                await Navigation.PushAsync(new RecipeSearchPage());
+                await Navigation.PushAsync(new MyMenuSearchRecipePage());
             }
         }
     }

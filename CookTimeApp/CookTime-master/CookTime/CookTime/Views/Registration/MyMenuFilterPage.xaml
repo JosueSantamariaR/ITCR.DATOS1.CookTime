@@ -69,10 +69,11 @@
                     <buttons:SfButton
                     Grid.Row="2"
                     HorizontalOptions="Center" 
-                        x:Name="searchButton" Clicked="searchButton_Clicked"    
+                        x:Name="searchButton"   
                     Style="{StaticResource SfButtonStyle}"
                     Text="Search it"
-                    WidthRequest="200" />
+                    WidthRequest="200" 
+                        Clicked="Filter_Clicked"/>
                 </Grid>
             </StackLayout>
         </ScrollView>
