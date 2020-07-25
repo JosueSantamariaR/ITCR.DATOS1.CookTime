@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Profile.Templates.SearchProfileDetailPage.xaml", "Views/Profile/Templates/SearchProfileDetailPage.xaml", typeof(global::CookTime.Views.Social.SearchProfileDetailPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CookTime.Views.Profile.SearchProfileDetailPage.xaml", "Views/Profile/SearchProfileDetailPage.xaml", typeof(global::CookTime.Views.Social.SearchProfileDetailPage))]
 
 namespace CookTime.Views.Social {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Profile\\Templates\\SearchProfileDetailPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Profile\\SearchProfileDetailPage.xaml")]
     public partial class SearchProfileDetailPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

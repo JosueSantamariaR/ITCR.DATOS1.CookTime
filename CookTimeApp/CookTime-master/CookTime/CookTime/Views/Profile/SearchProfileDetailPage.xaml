@@ -136,6 +136,17 @@
                         Margin="24,0,0,0"
                         Style="{StaticResource SfGradientButtonStyle}"
                         Text="FOLLOW" />
+
+
+                    <!--Follow button-->
+                    <buttons:SfButton x:Name="myMenu"
+                        
+                        Grid.RowSpan="3"
+                        Grid.Column="2"
+                        VerticalOptions="End"
+                        Margin="24,0,0,0"
+                        Style="{StaticResource SfGradientButtonStyle}"
+                        Text="MyMenu" />
                 </Grid>
 
                 <Grid

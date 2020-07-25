@@ -11,7 +11,7 @@ namespace CookTime.ViewModels.Social
     /// ViewModel for social profile pages.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class SocialProfileViewModel2 : BaseViewModel
+    public class SearchUserTappedDetailViewModel  : BaseViewModel
     {
         #region Fields
 
@@ -27,6 +27,17 @@ namespace CookTime.ViewModels.Social
 
         private string backgroundImage;
 
+
+
+        private string ageUser;
+        private string chefUser;
+        private string emailUser;
+        private string lastNameUser;
+        private string nameUser;
+        private string passwordUser;
+        private string photoUser;
+
+
         #endregion
 
         #region Constructor
@@ -34,17 +45,24 @@ namespace CookTime.ViewModels.Social
         /// <summary>
         /// Initializes a new instance for the <see cref="SocialProfileViewModel" /> class.
         /// </summary>
-        public SocialProfileViewModel2(User user)
+        public SearchUserTappedDetailViewModel (User user)
         {
             this.HeaderImagePath = "Album2.png";
-            this.ProfileImage = user.Photo;
             this.BackgroundImage = "Sky-Image.png";
-            this.ProfileName =user.name +" "+ user.lastName;
-            this.Designation = user.Chef;
-            this.State = user.Age;
+            
+            
             this.PostsCount = 8;
             this.FollowersCount = 45;
             this.FollowingCount = 45;
+
+            this.ageUser = user.Age;
+            this.chefUser = user.Chef;
+            this.emailUser = user.email;
+            this.lastNameUser = user.lastName;
+            this.nameUser = user.name;
+            this.passwordUser = user.password;
+            this.photoUser = user.Photo;
+
 
            
 
@@ -122,6 +140,136 @@ namespace CookTime.ViewModels.Social
                 this.NotifyPropertyChanged();
             }
         }
+       
+        
+       
+
+      
+
+     
+
+        public string Photo
+        {
+            get
+            {
+                return this.photoUser;
+            }
+
+            set
+            {
+                if (this.photoUser != value)
+                {
+                    this.photoUser = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public string name
+        {
+            get
+            {
+                return this.nameUser;
+            }
+
+            set
+            {
+                if (this.nameUser != value)
+                {
+                    this.nameUser = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public string age
+        {
+            get
+            {
+                return this.ageUser;
+            }
+
+            set
+            {
+                if (this.ageUser != value)
+                {
+                    this.ageUser = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public string chef
+        {
+            get
+            {
+                return this.chefUser;
+            }
+
+            set
+            {
+                if (this.chefUser != value)
+                {
+                    this.chefUser = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        public string email
+        {
+            get
+            {
+                return this.emailUser;
+            }
+
+            set
+            {
+                if (this.emailUser != value)
+                {
+                    this.emailUser = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        public string lastName
+        {
+            get
+            {
+                return this.lastNameUser;
+            }
+
+            set
+            {
+                if (this.lastNameUser != value)
+                {
+                    this.lastNameUser = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        public string password
+        {
+            get
+            {
+                return this.passwordUser;
+            }
+
+            set
+            {
+                if (this.passwordUser != value)
+                {
+                    this.passwordUser = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
 
         /// <summary>
         /// Gets or sets the photos collection.

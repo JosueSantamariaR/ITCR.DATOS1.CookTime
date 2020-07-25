@@ -20,7 +20,12 @@ namespace CookTime.Views.Social
         public SearchProfileDetailPage(User user)
         {
             InitializeComponent();
-            BindingContext = new SocialProfileViewModel2(user);
+            BindingContext = new SearchUserTappedDetailViewModel(user);
+        }
+
+        private void myMenu_Clicked()
+        {
+
         }
     }
 }
