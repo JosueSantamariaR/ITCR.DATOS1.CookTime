@@ -35,7 +35,7 @@ namespace CookTime.ViewModels.Catalog
         public NewsFeedViewModel(INavigation _navigation)
         {
             Navigation = _navigation;
-            CallAPIsync();         
+            CallAPIsyncFollowed();         
             this.MenuCommand = new Command(this.MenuClicked);
 
             this.ItemSelectedCommand = new Command(this.ItemSelected);
@@ -131,36 +131,33 @@ namespace CookTime.ViewModels.Catalog
 
         SimpleLoginPage userSearchFollow = new SimpleLoginPage();
         static string usersFollowed;
-        public void CallAPIsync()
+        public void CallAPIsyncFollowed()
         {
-            User userlink = userSearchFollow.GetUser();
-            
+
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://localhost:8080/cooktime1/api/services/getUsersFollowed/{userlink.email}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/@Nacho");
             var recets = client.GetAsync(endopoint).Result;
             if (recets.IsSuccessStatusCode)
             {
-                 usersFollowed = recets.Content.ReadAsStringAsync().Result;
-                //var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
-                //LatestStories = new ObservableCollection<Recet>(recet);
+                usersFollowed= recets.Content.ReadAsStringAsync().Result;
+                CallAPIsyncFollowedRecipes();
+
             }
         }
-        public void CallAPIsyncUser()
+        public void CallAPIsyncFollowedRecipes()
+
         {         
-                
-                HttpClient client = new HttpClient();
-                var endopoint = client.BaseAddress = new Uri($"http://localhost:8080/cooktime1/api/services/getUsersMyMenuList/{usersFollowed}");
-                var recets = client.GetAsync(endopoint).Result;
-                if (recets.IsSuccessStatusCode)
-                {
-
-                    var response = recets.Content.ReadAsStringAsync().Result;
-                    var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
-
-                    LatestStories = new ObservableCollection<Recet>(recet);
-
-                }
+            HttpClient client = new HttpClient();
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUsersMyMenuList/{usersFollowed}");
+            var recets = client.GetAsync(endopoint).Result;
+            if (recets.IsSuccessStatusCode)
+            {
+                var response = recets.Content.ReadAsStringAsync().Result;
+                var recet = JsonConvert.DeserializeObject<List<Recet>>(response);
+                LatestStories = new ObservableCollection<Recet>(recet);
             }
         }
         #endregion
     }
+
+}
