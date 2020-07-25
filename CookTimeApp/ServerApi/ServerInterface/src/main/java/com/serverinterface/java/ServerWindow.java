@@ -129,7 +129,7 @@ public class ServerWindow extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Recipe", "Name", "Author", "Type", "Portions", "Duration", "Time", "Difficulty", "Diet Tag", "Photo", "Ingredients", "Steps", "Price", "Calification", "Day", "Month", "Year", "Commentaries"
+                "Recipe", "Name", "Author", "Type", "Portions", "Duration", "Time", "Difficulty", "Diet Tag", "Photo", "Ingredients", "Steps", "Price", "Qualification", "Day", "Month", "Year", "Commentaries"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -176,11 +176,11 @@ public class ServerWindow extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Enterprise", "Name", "Logo", "Contact", "Schedule", "Direction", "Members"
+                "Enterprise", "Name", "Logo", "Contact", "Schedule", "Direction", "Qualification", "Followers", "Members", "My Menu List"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -197,6 +197,9 @@ public class ServerWindow extends javax.swing.JFrame {
             tableEnterprises.getColumnModel().getColumn(4).setResizable(false);
             tableEnterprises.getColumnModel().getColumn(5).setResizable(false);
             tableEnterprises.getColumnModel().getColumn(6).setResizable(false);
+            tableEnterprises.getColumnModel().getColumn(7).setResizable(false);
+            tableEnterprises.getColumnModel().getColumn(8).setResizable(false);
+            tableEnterprises.getColumnModel().getColumn(9).setResizable(false);
         }
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
@@ -459,7 +462,7 @@ public class ServerWindow extends javax.swing.JFrame {
                 
         DefaultTableModel model = (DefaultTableModel) tableEnterprises.getModel();
 
-        Object rowData[] = new Object[7];
+        Object rowData[] = new Object[10];
 
         rowData[0] = number;
         rowData[1] = (String) object.get("name");
@@ -467,7 +470,10 @@ public class ServerWindow extends javax.swing.JFrame {
         rowData[3] = (String) object.get("contact");
         rowData[4] = (String) object.get("schedule");
         rowData[5] = (String) object.get("direction");
-        rowData[6] = (String) object.get("members").toString();
+        rowData[6] = (String) object.get("calification").toString();
+        rowData[7] = (String) object.get("followers").toString();
+        rowData[8] = (String) object.get("members").toString();
+        rowData[9] = (String) object.get("myMenuList").toString();
         
         model.addRow(rowData);
             

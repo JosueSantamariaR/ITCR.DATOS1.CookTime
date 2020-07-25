@@ -92,11 +92,16 @@ public class UserJson {
         String followedNames = user.getFollowedNames();
         boolean chef = user.getChef();
         
-        myMenuList.add(avlTree.getRecipe(newRecipe));                     
-        InsertionSort insertionSort = new InsertionSort();      
+        myMenuList.add(avlTree.getRecipe(newRecipe));        
+        
+        InsertionSort insertionSort = new InsertionSort();
+        
         insertionSort.sort(myMenuList, user.getLastSort());
-        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);     
+        
+        JSONObject newUserJson = createJsonUser(email, name, lastName, age, password, photo, myMenuList, followers, followed, followedNames, chef);
+
         user.setMyMenuList(myMenuList);
+
         writeJson(newUserJson, email, false);
 
     }

@@ -57,7 +57,6 @@ public class Enterprise {
         this.contact = contact;
         this.schedule = schedule;
         this.direction = direction;
-        this.direction = direction;
         this.calification = calification;
         this.followers = followers;
         this.members = members;
@@ -147,7 +146,7 @@ public class Enterprise {
         this.calification = calification;
         
     }
-
+    
     public int getFollowers() {
         
         return followers;

@@ -38,14 +38,14 @@ public class RecipeJson {
                               String steps, int price, int day, int month, int year) {
 
         aVLTree.insert(name, author, type, portions, duration, time, difficulty, dietTag, photo, ingredients,
-                        steps, price, day, month, year);
+                       steps, price, day, month, year);
         
         int calification = 0;
-        ArrayList<String> commentary = new ArrayList<String>();        
+        ArrayList<String> commentary = new ArrayList<String>();                 
 
         JSONObject newRecipeJson = createJsonRecipe(name, author, type, portions, duration, time, difficulty, dietTag, photo, ingredients,
-                                                    steps, price, calification, day, month, year, commentary);               
-                
+                                                    steps, price, calification, day, month, year, commentary);    
+                               
         writeJson(newRecipeJson, name, true);
 
     }

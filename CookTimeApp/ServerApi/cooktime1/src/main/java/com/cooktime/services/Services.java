@@ -140,7 +140,25 @@ public class Services {
                 
         return Response.ok(binaryTree.getUser(email).getFollowedNames()).build();                              
                             
-    }       
+    }    
+    
+    @GET
+    @Path("/getUserFollowers/{email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getUserFollowers(@PathParam("email") String email) throws JSONException, IOException {
+                
+        return Response.ok(binaryTree.getUser(email).getFollowers()).build();                              
+                            
+    } 
+    
+    @GET
+    @Path("/getUserFollowed/{email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getUserFollowed(@PathParam("email") String email) throws JSONException, IOException {
+                
+        return Response.ok(binaryTree.getUser(email).getFollowed()).build();                              
+                            
+    } 
     
     /**
      * Method that posts a user in the tree.

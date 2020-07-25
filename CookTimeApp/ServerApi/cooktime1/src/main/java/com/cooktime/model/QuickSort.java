@@ -23,7 +23,7 @@ public class QuickSort {
         
         while (i <= j) {
             
-            while (array.get(i).getCalification() < pivot) {
+            while (array.get(i).getCalification()< pivot) {
                 
                 i ++;
                 

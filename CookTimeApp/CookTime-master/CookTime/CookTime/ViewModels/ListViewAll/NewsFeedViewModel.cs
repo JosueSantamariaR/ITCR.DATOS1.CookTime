@@ -129,13 +129,14 @@ namespace CookTime.ViewModels.Catalog
         }
 
 
-        SimpleLoginPage userSearchFollow = new SimpleLoginPage();
+        static SimpleLoginPage userSearchFollow = new SimpleLoginPage();
+        static User userFollowSearch = userSearchFollow.GetUser();
         static string usersFollowed;
         public void CallAPIsyncFollowed()
         {
-
+            
             HttpClient client = new HttpClient();
-            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/{userSearchFollow.GetUser()}");
+            var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUserFollowedName/{userFollowSearch.email}");
             var followed = client.GetAsync(endopoint).Result;
             if (followed.IsSuccessStatusCode)
             {
@@ -145,8 +146,8 @@ namespace CookTime.ViewModels.Catalog
             }
         }
         public void CallAPIsyncFollowedRecipes()
-
-        {         
+        {
+            
             HttpClient client = new HttpClient();
             var endopoint = client.BaseAddress = new Uri($"http://192.168.1.102:8080/cooktime1/api/services/getUsersMyMenuList/{usersFollowed}");
             var recets = client.GetAsync(endopoint).Result;
