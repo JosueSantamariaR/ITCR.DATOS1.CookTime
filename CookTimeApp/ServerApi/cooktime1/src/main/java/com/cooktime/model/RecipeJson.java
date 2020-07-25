@@ -13,7 +13,7 @@ import org.json.simple.parser.JSONParser;
 public class RecipeJson {
 
     private static final AVLTree aVLTree = AVLTree.getInstance();
-    private static final String directionJson = "C:\\Users\\ExtremeTech\\Documents\\NetBeansProjects\\CookTime-RestApi\\cooktime1\\recipes.json";
+    private static final String directionJson = "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\ServerApi\\cooktime1\\recipes.json";
 
     /**
      * Method that inserts recipes in the json file.

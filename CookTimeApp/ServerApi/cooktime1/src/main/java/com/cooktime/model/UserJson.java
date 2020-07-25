@@ -16,7 +16,7 @@ public class UserJson {
     
     private static final BinaryTree binaryTree = BinaryTree.getInstance();
     private static final AVLTree avlTree = AVLTree.getInstance();
-    private static final String directionJson = "C:\\Users\\ExtremeTech\\Documents\\NetBeansProjects\\CookTime-RestApi\\cooktime1\\users.json";
+    private static final String directionJson = "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\ServerApi\\cooktime1\\users.json";
     
     /**
      * Constructor of this class.
