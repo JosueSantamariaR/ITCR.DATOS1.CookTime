@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {}
+    "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {
+    "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
+        "projectUniqueName": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
         "projectName": "CookTime",
-        "projectPath": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\Desktop\\CookTimeApp\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\obj\\",
+        "projectPath": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\CookTime.csproj",
+        "packagesPath": "C:\\Users\\gabos\\.nuget\\packages\\",
+        "outputPath": "D:\\Datos I\\ITCR.DATOS1.CookTime\\CookTimeApp\\CookTime-master\\CookTime\\CookTime\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

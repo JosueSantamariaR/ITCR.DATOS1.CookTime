@@ -24,7 +24,7 @@ namespace CookTime.Views.Forms
        public  void CallAPIsyncSearcUsers()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://192.168.1.7:8080/cooktime1/api/services/getMatchUsers/");
+            client.BaseAddress = new Uri("http://192.168.1.102:8080/cooktime1/api/services/getMatchUsers/");
             var user = client.GetAsync(Convert.ToString(search.Text)).Result;
             if (user.IsSuccessStatusCode)
             {
@@ -36,7 +36,7 @@ namespace CookTime.Views.Forms
             public  void CallAPIsyncSearcRecipes() 
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://192.168.1.7:8080/cooktime1/api/services/getMatchRecipes/");
+            client.BaseAddress = new Uri("http://192.168.1.102:8080/cooktime1/api/services/getMatchRecipes/");
             var recipe = client.GetAsync(Convert.ToString(search.Text)).Result;
             if (recipe.IsSuccessStatusCode)
             {
@@ -49,7 +49,7 @@ namespace CookTime.Views.Forms
         public  void CallAPIsyncSearcEnterprise()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://192.168.1.7:8080/cooktime1/api/services/getMatchEnterprises/");
+            client.BaseAddress = new Uri("http://192.168.1.102:8080/cooktime1/api/services/getMatchEnterprises/");
             var enterprise = client.GetAsync(search.Text).Result;
             if (enterprise.IsSuccessStatusCode)
             {

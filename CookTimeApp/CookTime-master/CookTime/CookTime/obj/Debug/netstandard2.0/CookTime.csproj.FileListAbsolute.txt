@@ -102,7 +102,6 @@ D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\ob
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Themes\LightTheme.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Bookmarks\BookmarksPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Bookmarks\Styles.xaml.g.cs
-D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\ArticleDetailPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\Styles.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\EnterpriseSearchPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\NewsFeedPage.xaml.g.cs
@@ -117,7 +116,6 @@ D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\ob
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\ProfilePage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Styles.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Templates\ProfileTemplate.xaml.g.cs
-D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\AddContactPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\AddEnterprisePage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\RecipeFormPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\SimpleEmailEntry.xaml.g.cs
@@ -202,3 +200,10 @@ C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-mas
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\MyMenuSearchRecipePage.xaml.g.cs
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\MyMenuSearchRecipeTemplate.xaml.g.cs
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Templates\SearchProfileDetailPage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\NewsFeedDetailPage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\SearchRecipeDetailPage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\MyMenuSearchRecipePage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\MainSearchPage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Registration\MyMenuFilterPage.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\MyMenuSearchRecipeTemplate.xaml.g.cs
+D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\SearchProfileDetailPage.xaml.g.cs
