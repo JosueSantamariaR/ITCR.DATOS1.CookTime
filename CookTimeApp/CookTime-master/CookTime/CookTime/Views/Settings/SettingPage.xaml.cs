@@ -26,7 +26,10 @@ namespace CookTime.Views.Settings
             await Navigation.PopAsync();
         }
 
- 
+        private async void ResetPasswordButton_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new SimpleResetPasswordPage());
+        }
 
         private async void LogOutSettingsButton_Clicked(object sender, System.EventArgs e)
         {

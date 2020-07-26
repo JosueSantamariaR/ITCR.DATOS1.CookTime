@@ -137,6 +137,7 @@
                         Clicked="follow_Clicked"
                         Style="{StaticResource SfGradientButtonStyle}"
                         Text="FOLLOW" />
+<<<<<<< HEAD:CookTimeApp/CookTime-master/CookTime/CookTime/Views/Profile/SearchProfileDetailPage.xaml
 
 
                     <!--Follow button-->
@@ -148,6 +149,8 @@
                         Margin="24,0,0,0"
                         Style="{StaticResource SfGradientButtonStyle}"
                         Text="MyMenu" />
+=======
+>>>>>>> parent of 2f9160a... Update:CookTimeApp/CookTime-master/CookTime/CookTime/Views/Profile/Templates/SearchProfileDetailPage.xaml
                 </Grid>
 
                 <Grid

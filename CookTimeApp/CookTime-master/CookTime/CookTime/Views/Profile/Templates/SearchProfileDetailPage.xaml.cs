@@ -36,6 +36,7 @@ namespace CookTime.Views.Social
             CallAPIsyncFollowing();
             
             InitializeComponent();
+<<<<<<< HEAD:CookTimeApp/CookTime-master/CookTime/CookTime/Views/Profile/SearchProfileDetailPage.xaml.cs
             BindingContext = new SearchUserTappedDetailViewModel(user);
             userfollowed = user.email;
         }
@@ -94,6 +95,9 @@ namespace CookTime.Views.Social
             }
             
 
+=======
+            BindingContext = new SocialProfileViewModel2(user);
+>>>>>>> parent of 2f9160a... Update:CookTimeApp/CookTime-master/CookTime/CookTime/Views/Profile/Templates/SearchProfileDetailPage.xaml.cs
         }
         public void CallAPIsyncFollowing()
         {

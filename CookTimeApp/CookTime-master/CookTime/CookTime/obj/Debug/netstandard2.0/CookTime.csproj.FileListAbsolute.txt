@@ -200,6 +200,7 @@ C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-mas
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\MyMenuSearchRecipePage.xaml.g.cs
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\MyMenuSearchRecipeTemplate.xaml.g.cs
 C:\Users\carlo\Desktop\CookTimeApp\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\Templates\SearchProfileDetailPage.xaml.g.cs
+<<<<<<< HEAD
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\NewsFeedDetailPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Detail\SearchRecipeDetailPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\MyMenuSearchRecipePage.xaml.g.cs
@@ -209,3 +210,5 @@ D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\ob
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Profile\SearchProfileDetailPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\ListViewAll\UserSearchMyMenuPage.xaml.g.cs
 D:\Datos I\ITCR.DATOS1.CookTime\CookTimeApp\CookTime-master\CookTime\CookTime\obj\Debug\netstandard2.0\Views\Templates\UserSearchMyMenuTemplate.xaml.g.cs
+=======
+>>>>>>> parent of 2f9160a... Update
